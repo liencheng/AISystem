@@ -1,0 +1,7 @@
+Id	Desc	AIPolicy
+INT	STRING	INT
+#说明		
+#	程序不读	策略类型
+1	Boss	1
+2	Npc	2
+3	Partner	3
