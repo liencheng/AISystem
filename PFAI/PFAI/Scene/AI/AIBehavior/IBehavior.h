@@ -33,6 +33,8 @@ public:
     void                SetBehaviorStatus(AIBehaviorStatus status) { m_eBehaviorStatus = status; } // Set the behavior status
     AIBehaviorStatus    GetBehaviorStatus() const { return m_eBehaviorStatus; } // Get the behavior status
 
+    bool                TimeOut()const{return false;}
+
 public:
     int32_t GetId() const { return m_nId; } // Get the ID of the behavior
     int32_t GetPriority() const { return m_nPrority; } // Get the priority of the behavior

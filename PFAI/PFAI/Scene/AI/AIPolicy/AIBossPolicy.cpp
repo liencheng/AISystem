@@ -15,7 +15,9 @@ void AIBossPolicy::Update(float fDeltaTime)
             m_pCurrentBehavior = nullptr;
         }
     }
-    // Implement the update logic for the boss policy
+    //更新操作
+    Decision();
+    
 }
 
 bool AIBossPolicy::AddBehavior(IBehavior * pBehavior)
@@ -36,6 +38,7 @@ IBehavior* AIBossPolicy::Decision()
     // 2. 执行行为
     if (pBehavior != m_pCurrentBehavior)
     {
+    //3. 打断行为    
         if (nullptr != m_pCurrentBehavior)
         {
             m_pCurrentBehavior->Interrupt();
