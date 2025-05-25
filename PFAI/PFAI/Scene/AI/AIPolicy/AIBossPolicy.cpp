@@ -65,13 +65,14 @@ IBehavior * AIBossPolicy::SelectBestBehavior() const
     {
         return m_pCurrentBehavior;
     }
+
     //step2: 找到一个优先级更高的行为
     int32_t nCurBehaviorId = -1;
     int32_t nCurBehaviorPriority = -1;
     if (nullptr != m_pCurrentBehavior)
     {
         nCurBehaviorId = m_pCurrentBehavior->GetId();
-        nCurBehaviorPriority = m_pCurrentBehavior->GetPriority();
+        nCurBehaviorPriority = m_pCurrentBehavior->GetFinalWeight();
     }
     int32_t nMaxBehaviorPriority = nCurBehaviorPriority;
     std::vector<IBehavior *> priorityBehaviors;    // 记录优先级相同的行为
@@ -88,23 +89,26 @@ IBehavior * AIBossPolicy::SelectBestBehavior() const
             continue;
         }
         // 检查行为是否满足条件
-        if (!behavior->IsSatisfyCondition())
+        if (!behavior->IsSatisfyCondition(m_pAIKnowledge))
         {
             continue;
         }
-        if(behavior->GetPriority()<= nCurBehaviorPriority)
+
+        int32_t nFinalWeight = behavior->GetFinalWeight();
+
+        if(nFinalWeight <= nCurBehaviorPriority)
         {
             continue;
         }
         // 找到优先级更高的行为
-        if(nMaxBehaviorPriority < behavior->GetPriority())
+        if(nMaxBehaviorPriority < nFinalWeight)
         {
             priorityBehaviors.clear();
             priorityBehaviors.push_back(behavior);
-            nMaxBehaviorPriority = behavior->GetPriority();
+            nMaxBehaviorPriority = nFinalWeight;
         }
         // 如果优先级相同，则加入到列表中
-        else if(nMaxBehaviorPriority == behavior->GetPriority())
+        else if(nMaxBehaviorPriority == nFinalWeight)
         {
             priorityBehaviors.push_back(behavior);
         }

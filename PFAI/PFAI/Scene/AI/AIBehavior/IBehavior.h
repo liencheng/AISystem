@@ -11,7 +11,7 @@ class IBehavior
 {
 public:
     IBehavior(Obj_Char * owner):m_Owner(owner){}
-    IBehavior(Obj_Char * owner, std::vector<IAICon *> vecCondition):m_Owner(owner)
+    IBehavior(Obj_Char * owner, std::vector<IAICon> vecCondition):m_Owner(owner)
     {
         for (auto condition : vecCondition)
         {
@@ -20,8 +20,10 @@ public:
     }
 protected:
     AIBehaviorInfo              m_behaviorInfo; // Pointer to the behavior information
-    std::vector<IAICon *>       m_vecConditions; // List of conditions associated with the behavior
     Obj_Char *                  m_Owner = nullptr; // Pointer to the owner of the behavior
+    std::vector<IAICon>       m_vecConditions; // List of conditions associated with the behavior
+    std::vector<const AISignal*>     m_vecSignals; // List of signals associated with the behavior
+    std::vector<const IGoal*>       m_vecGoals; // List of goals associated with the behavior
 private:
     time_t              m_LastExecuteTime = 0; // The last time the behavior was executed
     int32_t             m_nId = -1; // Unique ID for the behavior
@@ -37,14 +39,19 @@ public:
 
 public:
     int32_t GetId() const { return m_nId; } // Get the ID of the behavior
-    int32_t GetPriority() const { return m_nPrority; } // Get the priority of the behavior
+    int32_t GetWeightOfPriority() const { return m_nPrority; } // Get the priority of the behavior
+    int32_t GetWeightOfSignal() const;
+    int32_t GetWeightOfGoal() const; // Get the weight of a goal based on knowledge
+    int32_t GetFinalWeight() const; // Get the final weight of the behavior based on priority, signal, and goal weights
+
+
     bool IsInCD() const { return false; } // Check if the behavior is in cooldown
 
     
     
     
 public:
-    virtual  bool IsSatisfyCondition(); // Check if the conditions are satisfied
+    virtual  bool IsSatisfyCondition(const AIKnowledge * pknowledge); // Check if the conditions are satisfied
     virtual  void OnStart() = 0; // Called when the behavior starts
     virtual  void OnUpdate()
     {

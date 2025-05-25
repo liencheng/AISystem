@@ -1,6 +1,7 @@
 #pragma once
+#include <IGoal.h>
 
-class AIGSCombat
+class AIGSCombat: public IGoal
 {
 public:
     

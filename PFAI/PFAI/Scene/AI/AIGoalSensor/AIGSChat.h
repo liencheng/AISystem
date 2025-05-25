@@ -10,9 +10,5 @@
 class AIGSChat:IGoal
 {
 public:
-    virtual void OnUpdate() override;
-
-
 private:
-    
 };
