@@ -17,28 +17,19 @@ public:
  IAIPolicy() = default;
 protected:
  AIKnowledge * m_pAIKnowledge;
- AIPolicyType m_ePolicyType = AIPolicyType::AIPolicyType_None;
- std::vector<IBehavior *> m_vecBehavior;
+ std::vector<IBehavior*> m_vecBehavior;
+ std::vector<IDbgNess* > m_vecDbgNodes; // 调试节点
  IBehavior * m_pCurrentBehavior = nullptr;
+ E_AIPolicyType m_ePolicyType = E_AIPolicyType::AIPolicyType_None;
  
 public:
- /*
-  *AI心跳
-  */
- virtual void Update(float fDeltaTime) = 0;
-
- /*
-  *添加行为
-  */
- virtual bool AddBehavior(IBehavior * pBehavior) = 0;
-
- /*
-  *决策
-  */
- virtual IBehavior* Decision() = 0;
-
- /*
-  *获取当前行为
-  */
- virtual IBehavior * SelectBestBehavior() const = 0 ; 
+ virtual void        Update(float fDeltaTime) = 0;
+ virtual IBehavior*  Decision() = 0;
+ virtual IBehavior*  SelectBestBehavior() const = 0 ;
+ 
+ bool        AddBehavior(IBehavior* pBehavior);
+ bool        DelBehavior(IBehavior* pBehavior);
+ 
+ AIKnowledge*        GetAIKnowledge()const { return m_pAIKnowledge; }        
+ IDbgNess*           GetDbgNode(int32_t id) const;
 };

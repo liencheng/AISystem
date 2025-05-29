@@ -26,15 +26,13 @@ private:
  *example:
     in some AI, we need to add a goal to occupy a certain position
  */
- std::vector<IGoal> m_vecGoals;
+ std::vector<IGoal*> m_vecGoals;
  /*
     *AI事件列表，用于存储AI的事件信息
     *Signal: 信号，用于通知AI行为,收到信号之后，需要强制执行某些行为
  */
 std::vector<AISignal> m_vecSignals;
 
-private:
- void UpdateGoals(){}
 
 public:
  AIKnowledge(Scene *pScene, Obj_Char *pPlayer);
@@ -42,4 +40,13 @@ public:
 
  Obj_Char * GetPlayer() const{ return m_pPlayer; }
 
+public:
+ void Update();
+ bool AddGoals(IGoal *pGoal);
+ bool ReceiveSignal(const AISignal &signal);
+ 
+private:
+ void UpdateGoals();
+ void UpdateSignals();
+ 
 };

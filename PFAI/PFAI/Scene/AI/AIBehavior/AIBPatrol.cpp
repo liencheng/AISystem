@@ -39,7 +39,7 @@ void AIBPatrol::OnUpdate()
 
 void AIBPatrol::OnEnd()
 {
-    SetBehaviorStatus(AIBehaviorStatus::ABS_End);
+    SetBehaviorStatus(E_AIBehaviorStatus::ABS_End);
 }
 
 bool AIBPatrol::Interrupt()

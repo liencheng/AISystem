@@ -6,18 +6,23 @@
 
 void AIBSkill::OnStart()
 {
-    // Initialize the skill behavior
 }
 
 void AIBSkill::OnUpdate()
 {
     IBehavior::OnUpdate();
+
+    if(TimeOut())
+    {
+        OnEnd(E_AIBehaviorStatus::ABS_TimeOut);
+    }
+    
     m_Owner->Caskill(m_nSkillId);
     // Update the skill behavior
-    OnEnd();
+    OnEnd(E_AIBehaviorStatus::ABS_Succ);
 }
 
-void AIBSkill::OnEnd()
+void AIBSkill::OnEnd(E_AIBehaviorStatus result)
 {
-    SetBehaviorStatus(AIBehaviorStatus::ABS_End);
+    SetBehaviorStatus(result);
 }

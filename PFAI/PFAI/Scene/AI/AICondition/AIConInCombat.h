@@ -11,6 +11,8 @@ public:
 public:
     virtual  bool IsSatisfy(Obj_Char* pOwner) override
     {
+        MAYBE_DEBUG;
+        
         return pOwner->IsInCombat();
     }
 };

@@ -5,25 +5,22 @@
 
 void AIBossPolicy::Update(float fDeltaTime)
 {
-    if (nullptr != m_pCurrentBehavior)
+    do
     {
-        m_pCurrentBehavior->OnUpdate();
-        // 检查行为是否结束
-        if (m_pCurrentBehavior->GetBehaviorStatus() == AIBehaviorStatus::ABS_End
-            || m_pCurrentBehavior->GetBehaviorStatus() == AIBehaviorStatus::ABS_None)
+        // 如果当前行为已经结束，则结束当前行为
+        if(m_pCurrentBehavior!=nullptr
+            && m_pCurrentBehavior->GetBehaviorStatus()>=E_AIBehaviorStatus::ABS_End)
         {
             m_pCurrentBehavior = nullptr;
+            break;
         }
-    }
-    //更新操作
-    Decision();
-    
-}
-
-bool AIBossPolicy::AddBehavior(IBehavior * pBehavior)
-{
-    // Implement the logic to add a behavior to the boss policy
-    return true;
+        if(m_pCurrentBehavior!=nullptr)
+        {
+            m_pCurrentBehavior->OnUpdate();
+        }
+        //更新操作
+        Decision();
+    }while (false);
 }
 
 IBehavior* AIBossPolicy::Decision()

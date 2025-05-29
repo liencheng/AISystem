@@ -47,7 +47,7 @@ void IGoal::OnSatisfy()
 {
     //满足条件，则更新状态
     m_bSatisfy = true;
-    SetOverdueTime(TimeHelper::getCurrentTimestamp() + m_GoalLifetime);
+    m_OverdueTime = TimeHelper::getCurrentTimestamp() + m_GoalLifetime;
 }
 
 
@@ -55,10 +55,28 @@ bool IGoal::IsSatisfyCon(const AIKnowledge* pK) const
 {
     for (auto con : m_vecConditions)
     {
-        if (!con->IsSatisfy(pK->m_pPlayer))
+        if (!con->IsSatisfy(pK->GetPlayer()))
         {
             return false;
         }
     }
+    return true;
+}
+
+bool IGoal::AddCondition(IAICon* pCondition)
+{
+    if (nullptr == pCondition)
+    {
+        return false;
+    }
+    // 检查条件是否已经存在
+    for (auto con : m_vecConditions)
+    {
+        if (con->GetId() == pCondition->GetId())
+        {
+            return false; // 条件已存在
+        }
+    }
+    m_vecConditions.push_back(pCondition);
     return true;
 }

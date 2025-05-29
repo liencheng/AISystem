@@ -11,15 +11,8 @@ class IBehavior
 {
 public:
     IBehavior(Obj_Char * owner):m_Owner(owner){}
-    IBehavior(Obj_Char * owner, std::vector<IAICon> vecCondition):m_Owner(owner)
-    {
-        for (auto condition : vecCondition)
-        {
-            m_vecConditions.push_back(condition);
-        }
-    }
 protected:
-    AIBehaviorInfo              m_behaviorInfo; // Pointer to the behavior information
+    //AIBehaviorInfo              m_behaviorInfo; // Pointer to the behavior information
     Obj_Char *                  m_Owner = nullptr; // Pointer to the owner of the behavior
     std::vector<IAICon>       m_vecConditions; // List of conditions associated with the behavior
     std::vector<const AISignal*>     m_vecSignals; // List of signals associated with the behavior
@@ -28,12 +21,12 @@ private:
     time_t              m_LastExecuteTime = 0; // The last time the behavior was executed
     int32_t             m_nId = -1; // Unique ID for the behavior
     int32_t             m_nPrority = 0; // Priority of the behavior
-    AIBehaviorStatus    m_eBehaviorStatus = AIBehaviorStatus::ABS_None; // The current status of the behavior
+    E_AIBehaviorStatus    m_eBehaviorStatus = E_AIBehaviorStatus::ABS_None; // The current status of the behavior
 public:
     void                SetLastExecuteTime(float time) { m_LastExecuteTime = time; } // Set the last execute time
     time_t              GetLastExecuteTime() const { return m_LastExecuteTime; } // Get the last execute time
-    void                SetBehaviorStatus(AIBehaviorStatus status) { m_eBehaviorStatus = status; } // Set the behavior status
-    AIBehaviorStatus    GetBehaviorStatus() const { return m_eBehaviorStatus; } // Get the behavior status
+    void                SetBehaviorStatus(E_AIBehaviorStatus status) { m_eBehaviorStatus = status; } // Set the behavior status
+    E_AIBehaviorStatus    GetBehaviorStatus() const { return m_eBehaviorStatus; } // Get the behavior status
 
     bool                TimeOut()const{return false;}
 
@@ -57,7 +50,7 @@ public:
     {
         m_LastExecuteTime = 0;
     }
-    virtual  void OnEnd() = 0; // Called when the behavior ends
+    virtual  void OnEnd(E_AIBehaviorStatus result) = 0; // Called when the behavior ends
     virtual  bool CanInterrupt() = 0; // 是否可以被打断
     virtual  bool Interrupt() =0; // 打断行为
 };

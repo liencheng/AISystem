@@ -28,6 +28,8 @@ public:
 public:  
     virtual bool IsSatisfy(Obj_Char* pOwner) override
     {
+        MAYBE_DEBUG;
+        
         switch (m_eOp)
         {
             case E_AI_ConHP_OP::Greater:
