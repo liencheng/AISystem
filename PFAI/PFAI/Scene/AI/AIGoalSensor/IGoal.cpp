@@ -3,7 +3,6 @@
 
 
 
-
 IGoal::IGoal(int32_t nCfgId)
 {
     m_CfgId = nCfgId;

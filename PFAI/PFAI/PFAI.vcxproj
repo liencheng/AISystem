@@ -78,6 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -106,9 +107,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_GAMESERVER_;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>./Public/Solar;./Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,6 +158,8 @@
   <ItemGroup>
     <ClCompile Include="PFAI.cpp" />
     <ClCompile Include="Public\DataDefine.cpp" />
+    <ClCompile Include="Public\Public.cpp" />
+    <ClCompile Include="Public\Table\Table_All_Impl.cpp" />
     <ClCompile Include="Routine\GameStruct_Scene.cpp" />
     <ClCompile Include="Routine\Scene.cpp" />
     <ClCompile Include="Scene\AI\AIBehavior\AIBehaviorInfo.cpp" />
@@ -182,6 +186,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\DataDefine.h" />
+    <ClInclude Include="Public\Public.h" />
+    <ClInclude Include="Public\Solar\solar_table_inst.h" />
+    <ClInclude Include="Public\Solar\sol_assert.h" />
+    <ClInclude Include="Public\Solar\sol_table.h" />
+    <ClInclude Include="Public\Solar\sol_table_file.h" />
+    <ClInclude Include="Public\Table\Table_NpcAIBehavior.h" />
+    <ClInclude Include="Public\Table\Table_NpcAICondition.h" />
+    <ClInclude Include="Public\Table\Table_NpcAIGoalSensor.h" />
+    <ClInclude Include="Public\Table\Table_NpcAIPolicy.h" />
+    <ClInclude Include="Public\Table\Table_NpcAIPolicyRoot.h" />
     <ClInclude Include="Routine\GameStruct_Scene.h" />
     <ClInclude Include="Routine\Scene.h" />
     <ClInclude Include="Scene\AI\AIBehavior\AIBehaviorInfo.h" />

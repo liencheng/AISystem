@@ -1,22 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="PFAI.cpp" />
+    <ClCompile Include="Public\DataDefine.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="Public\Public.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="Public\Table\Table_All_Impl.cpp">
+      <Filter>Public\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="Routine\GameStruct_Scene.cpp">
+      <Filter>Routine</Filter>
+    </ClCompile>
+    <ClCompile Include="Routine\Scene.cpp">
+      <Filter>Routine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIBehavior\AIBehaviorInfo.cpp">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIBehavior\AIBPatrol.cpp">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIBehavior\AIBSkill.cpp">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIBehavior\IBehavior.cpp">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AICondition\AIConGotoPoint.cpp">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AICondition\AIConHP.cpp">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AICondition\AIConInCombat.cpp">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AICondition\AIConMP.cpp">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AICondition\IAICon.cpp">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIGoalSensor\IGoal.cpp">
+      <Filter>Scene\AI\AIGoalSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIPolicy\AIBossPolicy.cpp">
+      <Filter>Scene\AI\AIPolicy</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIPolicy\IAIPolicy.cpp">
+      <Filter>Scene\AI\AIPolicy</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIPolicy\AIPartnerPolicy.cpp">
+      <Filter>Scene\AI\AIPolicy</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIKnowledge\AIKnowledge.cpp">
+      <Filter>Scene\AI\AIKnowledge</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIDebugable\DbgController.cpp">
+      <Filter>Scene\AI\AIDebugable</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIDebugable\DbgInfo.cpp">
+      <Filter>Scene\AI\AIDebugable</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\AIDebugable\IDbgNess.cpp">
+      <Filter>Scene\AI\AIDebugable</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\AI\GameDfine_AI\AIDefine.cpp">
+      <Filter>Scene\AI\GameDfine_AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Obj\Obj_Char.cpp">
+      <Filter>Scene\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Obj\Obj_NPC.cpp">
+      <Filter>Scene\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Obj\Obj_Player.cpp">
+      <Filter>Scene\Obj</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PFAI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Public\DataDefine.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Public.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Table\Table_NpcAIBehavior.h">
+      <Filter>Public\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Table\Table_NpcAICondition.h">
+      <Filter>Public\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Table\Table_NpcAIGoalSensor.h">
+      <Filter>Public\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Table\Table_NpcAIPolicy.h">
+      <Filter>Public\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Table\Table_NpcAIPolicyRoot.h">
+      <Filter>Public\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Solar\sol_assert.h">
+      <Filter>Public\Solar</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Solar\sol_table.h">
+      <Filter>Public\Solar</Filter>
+    </ClInclude>
+    <ClInclude Include="Routine\GameStruct_Scene.h">
+      <Filter>Routine</Filter>
+    </ClInclude>
+    <ClInclude Include="Routine\Scene.h">
+      <Filter>Routine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIBehavior\AIBehaviorInfo.h">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIBehavior\AIBPatrol.h">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIBehavior\AIBSkill.h">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIBehavior\IBehavior.h">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AICondition\AIConGotoPoint.h">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AICondition\AIConHP.h">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AICondition\AIConInCombat.h">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AICondition\AIConMP.h">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AICondition\IAICon.h">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIGoalSensor\IGoal.h">
+      <Filter>Scene\AI\AIGoalSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIPolicy\AIBossPolicy.h">
+      <Filter>Scene\AI\AIPolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIPolicy\IAIPolicy.h">
+      <Filter>Scene\AI\AIPolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIPolicy\AIPartnerPolicy.h">
+      <Filter>Scene\AI\AIPolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIKnowledge\AIKnowledge.h">
+      <Filter>Scene\AI\AIKnowledge</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIDebugable\DbgController.h">
+      <Filter>Scene\AI\AIDebugable</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIDebugable\DbgInfo.h">
+      <Filter>Scene\AI\AIDebugable</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIDebugable\IDbgNess.h">
+      <Filter>Scene\AI\AIDebugable</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\GameDfine_AI\AIDefine.h">
+      <Filter>Scene\AI\GameDfine_AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Obj\Obj_Char.h">
+      <Filter>Scene\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Obj\Obj_NPC.h">
+      <Filter>Scene\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Obj\Obj_Player.h">
+      <Filter>Scene\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Solar\sol_table_file.h">
+      <Filter>Public\Solar</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Solar\solar_table_inst.h">
+      <Filter>Public\Solar</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Public">
+      <UniqueIdentifier>{8da2bf8d-5a74-4139-9146-5e1829f004fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Table">
+      <UniqueIdentifier>{372d3745-528d-4e91-b1d1-8972e7d8e2c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Solar">
+      <UniqueIdentifier>{c4afe0cc-582d-4381-ba25-5241153ba143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Routine">
+      <UniqueIdentifier>{9706b6df-4990-413d-b085-b89e31492e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{da520090-7843-4eef-a7ae-a73c34b375b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI">
+      <UniqueIdentifier>{147f256f-d0ac-4618-85cd-daea95e4fa05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\AIBehavior">
+      <UniqueIdentifier>{517a8f2a-bb5f-4b3a-ae4c-306cba39f4e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\AICondition">
+      <UniqueIdentifier>{78817280-a09a-4375-8fee-52be6929d16e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\AIGoalSensor">
+      <UniqueIdentifier>{1cb0c835-c146-4b6a-8c08-38e6c68143b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\AIPolicy">
+      <UniqueIdentifier>{13dea6de-8ea5-46f7-9870-62445d30f219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\AIKnowledge">
+      <UniqueIdentifier>{f843725e-b1ea-454c-a864-31bb24fcdc97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\AIDebugable">
+      <UniqueIdentifier>{b280d83c-9be2-4ab9-9e3b-69dbae20704c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\GameDfine_AI">
+      <UniqueIdentifier>{eb81c1f1-b639-4354-9d95-661cd6681210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Obj">
+      <UniqueIdentifier>{809ccb0b-ebc0-4116-a840-3fb77130fe3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

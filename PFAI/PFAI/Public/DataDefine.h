@@ -1,6 +1,5 @@
 #pragma once
 #include <cstdint>
-
 #include "../Routine/Scene.h"
 
 class DataDefine
