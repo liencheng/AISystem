@@ -15,38 +15,36 @@
 class AIKnowledge
 {
 public:
+   AIKnowledge(Scene *pScene, Obj_Char *pChar):m_pScene(pScene), m_pPlayer(pChar) {
+      InitGoals();
+   };
+   ~AIKnowledge(){}
+   void InitGoals();
 
 private:
- Scene *            m_pScene = nullptr;
- Obj_Char *         m_pPlayer = nullptr;
+   Scene *            m_pScene = nullptr;
+   Obj_Char *         m_pPlayer = nullptr;
+   std::vector<IGoal*>     m_vecGoals;
+   std::vector<AISignal>   m_vecSignals;
 
- /*
- *AI目标列表，用于存储AI的目标信息
- *allow designer to add or remove goals dynamically
- *example:
-    in some AI, we need to add a goal to occupy a certain position
- */
- std::vector<IGoal*> m_vecGoals;
- /*
-    *AI事件列表，用于存储AI的事件信息
-    *Signal: 信号，用于通知AI行为,收到信号之后，需要强制执行某些行为
- */
-std::vector<AISignal> m_vecSignals;
-
+   bool              m_bDirty;
 
 public:
- AIKnowledge(Scene *pScene, Obj_Char *pPlayer);
- ~AIKnowledge();
-
- Obj_Char * GetPlayer() const{ return m_pPlayer; }
-
-public:
+   Obj_Char *  GetPlayer() const{ return m_pPlayer; }
+   Scene *     GetScene() const{ return m_pScene; }
  void Update();
+
  bool AddGoals(IGoal *pGoal);
- bool ReceiveSignal(const AISignal &signal);
+ bool DelGoals(IGoal *pGoal);
+
+ bool ProduceSignal(const AISignal &signal);
+ bool ConsumeSignal(const AISignal &signal);
+
+ void MarkDirty() { m_bDirty = true;}
+ void ClearDirty() { m_bDirty = false;}
+ bool IsDirty() {return m_bDirty;}
  
 private:
  void UpdateGoals();
  void UpdateSignals();
- 
-};
+}; 

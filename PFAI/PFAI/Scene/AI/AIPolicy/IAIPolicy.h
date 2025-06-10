@@ -21,15 +21,29 @@ protected:
  std::vector<IDbgNess* > m_vecDbgNodes; // 调试节点
  IBehavior * m_pCurrentBehavior = nullptr;
  E_AIPolicyType m_ePolicyType = E_AIPolicyType::AIPolicyType_None;
+
+ bool       m_bBehaviorDirty = false; // 行为是否改变
  
 public:
- virtual void        Update(float fDeltaTime) = 0;
+ virtual void        Update(float fDeltaTime);
  virtual IBehavior*  Decision() = 0;
  virtual IBehavior*  SelectBestBehavior() const = 0 ;
+
+ void                UpdateView();
+ void                UpdateDbg();
  
  bool        AddBehavior(IBehavior* pBehavior);
  bool        DelBehavior(IBehavior* pBehavior);
+
+ void        MarkBehaviorDirty() { m_bBehaviorDirty = true; }
+ void        ClearBehaviorDirty() { m_bBehaviorDirty = false; }
+ bool        IsBehaviorDirty() const { return m_bBehaviorDirty; }
  
  AIKnowledge*        GetAIKnowledge()const { return m_pAIKnowledge; }        
  IDbgNess*           GetDbgNode(int32_t id) const;
+
+private:
+ bool       AddDbgNode(IDbgNess* pDbgNode);
+ bool       DelDbgNode(IDbgNess* pDbgNode);
+
 };

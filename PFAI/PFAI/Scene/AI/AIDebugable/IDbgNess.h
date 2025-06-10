@@ -7,6 +7,10 @@
     if(DbgIsManualDisable()) return false;
 
 
+#define STATIC_INHERIT_DBG(this_point) \
+    IDbgNess *dbgNess = static_cast<IDbgNess *>(this_point); 
+
+
 class IDbgNess
 {
 public:
