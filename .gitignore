@@ -1,0 +1,14 @@
+﻿*.ipch
+/PFAI/.vs/PFAI/copilot-chat/0165cb87/sessions
+/PFAI/.vs/PFAI/FileContentIndex
+/PFAI/.vs/PFAI/v17
+*.log
+*.db
+/PFAI/.vs/PFAI/CopilotIndices/17.13.430.18484/CodeChunks.db-shm
+/PFAI/.vs/PFAI/CopilotIndices/17.13.430.18484/CodeChunks.db-wal
+/PFAI/.vs/PFAI/CopilotIndices/17.13.430.18484/SemanticSymbols.db
+*.db-shm
+*.db-wal
+/.vs/slnx.sqlite
+/.vs/slnx.sqlite-journal
+/.gitignore
