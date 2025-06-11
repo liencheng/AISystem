@@ -2,6 +2,9 @@
     "files.associations": {
         "*.h": "cpp",
         "cstdint": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "__availability": "cpp",
+        "__config": "cpp",
+        "string": "cpp"
     }
 }

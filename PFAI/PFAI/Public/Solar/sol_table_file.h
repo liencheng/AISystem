@@ -9,8 +9,8 @@
 #include "sol_assert.h"
 
 #define TABLE_FILE_VERSION 1
-#define TABLE_FILE_TYPE_ROW 1    //µÚ0ĞĞÎª¸÷ÁĞµÄÃû×Ö£¬µÚ1ĞĞÎª¸÷ÁĞµÄÀàĞÍ
-#define TABLE_FILE_DATA_ROW 4    //ÕıÊ½Êı¾İ´ÓµÚ5ĞĞ¿ªÊ¼
+#define TABLE_FILE_TYPE_ROW 1    //å­—æ®µç±»å‹
+#define TABLE_FILE_DATA_ROW 4    //æ•°æ®è¡Œ
 namespace solar {
 
 
@@ -131,6 +131,7 @@ namespace solar {
 
 				if (line_num == TABLE_FILE_TYPE_ROW)
 				{
+					++line_num;
 					read_filed_type(line);
 					continue;
 				}
