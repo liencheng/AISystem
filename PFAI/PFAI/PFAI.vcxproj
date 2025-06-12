@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Editor\EDScene.cpp" />
     <ClCompile Include="PFAI.cpp" />
     <ClCompile Include="Public\DataDefine.cpp" />
     <ClCompile Include="Public\Public.cpp" />
@@ -185,6 +186,8 @@
     <ClCompile Include="Scene\Obj\Obj_Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bridge\IBridge.h" />
+    <ClInclude Include="Editor\EDScene.h" />
     <ClInclude Include="Public\DataDefine.h" />
     <ClInclude Include="Public\Public.h" />
     <ClInclude Include="Public\Solar\solar_table_inst.h" />
@@ -196,6 +199,8 @@
     <ClInclude Include="Public\Table\Table_NpcAIGoalSensor.h" />
     <ClInclude Include="Public\Table\Table_NpcAIPolicy.h" />
     <ClInclude Include="Public\Table\Table_NpcAIPolicyRoot.h" />
+    <ClInclude Include="Public\Utils\Logger.h" />
+    <ClInclude Include="Public\Utils\Time.h" />
     <ClInclude Include="Routine\GameStruct_Scene.h" />
     <ClInclude Include="Routine\Scene.h" />
     <ClInclude Include="Scene\AI\AIBehavior\AIBehaviorInfo.h" />

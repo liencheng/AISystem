@@ -19,7 +19,7 @@ public:
     // Initialize the object
     void Init();
     // Update the object
-    void Update();
+    void Update(float deltaTime);
     // Render the object
     void Render();
     void Caskill(int32_t skillId){ std::cout<<"Cast skill: " << skillId << std::endl; }

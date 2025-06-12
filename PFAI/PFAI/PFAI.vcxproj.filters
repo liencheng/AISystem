@@ -80,6 +80,9 @@
     <ClCompile Include="Scene\Obj\Obj_Player.cpp">
       <Filter>Scene\Obj</Filter>
     </ClCompile>
+    <ClCompile Include="Editor\EDScene.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\DataDefine.h">
@@ -103,10 +106,16 @@
     <ClInclude Include="Public\Table\Table_NpcAIPolicyRoot.h">
       <Filter>Public\Table</Filter>
     </ClInclude>
+    <ClInclude Include="Public\Solar\solar_table_inst.h">
+      <Filter>Public\Solar</Filter>
+    </ClInclude>
     <ClInclude Include="Public\Solar\sol_assert.h">
       <Filter>Public\Solar</Filter>
     </ClInclude>
     <ClInclude Include="Public\Solar\sol_table.h">
+      <Filter>Public\Solar</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Solar\sol_table_file.h">
       <Filter>Public\Solar</Filter>
     </ClInclude>
     <ClInclude Include="Routine\GameStruct_Scene.h">
@@ -178,55 +187,70 @@
     <ClInclude Include="Scene\Obj\Obj_Player.h">
       <Filter>Scene\Obj</Filter>
     </ClInclude>
-    <ClInclude Include="Public\Solar\sol_table_file.h">
-      <Filter>Public\Solar</Filter>
+    <ClInclude Include="Public\Utils\Logger.h">
+      <Filter>Public\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Public\Solar\solar_table_inst.h">
-      <Filter>Public\Solar</Filter>
+    <ClInclude Include="Public\Utils\Time.h">
+      <Filter>Public\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EDScene.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\IBridge.h">
+      <Filter>Bridge</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Public">
-      <UniqueIdentifier>{8da2bf8d-5a74-4139-9146-5e1829f004fe}</UniqueIdentifier>
+      <UniqueIdentifier>{a380efa8-17e2-43dc-a1ab-2858ac9ad01f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Public\Table">
-      <UniqueIdentifier>{372d3745-528d-4e91-b1d1-8972e7d8e2c4}</UniqueIdentifier>
+      <UniqueIdentifier>{5655208e-388d-4c83-a971-a3a37cfe3115}</UniqueIdentifier>
     </Filter>
     <Filter Include="Public\Solar">
-      <UniqueIdentifier>{c4afe0cc-582d-4381-ba25-5241153ba143}</UniqueIdentifier>
+      <UniqueIdentifier>{1f82ef09-4830-4647-a2a3-ffe8babbe3cf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Routine">
-      <UniqueIdentifier>{9706b6df-4990-413d-b085-b89e31492e2d}</UniqueIdentifier>
+      <UniqueIdentifier>{a45694c3-38f1-4588-9ff4-51f51bb1a90d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene">
-      <UniqueIdentifier>{da520090-7843-4eef-a7ae-a73c34b375b6}</UniqueIdentifier>
+      <UniqueIdentifier>{f529e441-d727-42fb-9f6e-2d6ff79ebf14}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI">
-      <UniqueIdentifier>{147f256f-d0ac-4618-85cd-daea95e4fa05}</UniqueIdentifier>
+      <UniqueIdentifier>{b9836869-e971-42e6-9381-1d54c9798a28}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI\AIBehavior">
-      <UniqueIdentifier>{517a8f2a-bb5f-4b3a-ae4c-306cba39f4e2}</UniqueIdentifier>
+      <UniqueIdentifier>{6d8acfd8-bb41-4fdf-9164-6a0669dad2b5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI\AICondition">
-      <UniqueIdentifier>{78817280-a09a-4375-8fee-52be6929d16e}</UniqueIdentifier>
+      <UniqueIdentifier>{12348719-b80d-450d-8354-e7e9f4f52995}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI\AIGoalSensor">
-      <UniqueIdentifier>{1cb0c835-c146-4b6a-8c08-38e6c68143b8}</UniqueIdentifier>
+      <UniqueIdentifier>{d6f73c04-f272-4e70-86c0-78efbd706cba}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI\AIPolicy">
-      <UniqueIdentifier>{13dea6de-8ea5-46f7-9870-62445d30f219}</UniqueIdentifier>
+      <UniqueIdentifier>{7ff81475-e05a-497d-bb4e-48dd6ca1a94a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI\AIKnowledge">
-      <UniqueIdentifier>{f843725e-b1ea-454c-a864-31bb24fcdc97}</UniqueIdentifier>
+      <UniqueIdentifier>{a72c7ae5-67e6-4c53-84d6-13ebdc4c3e3b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI\AIDebugable">
-      <UniqueIdentifier>{b280d83c-9be2-4ab9-9e3b-69dbae20704c}</UniqueIdentifier>
+      <UniqueIdentifier>{2457d222-1c9c-48f1-af41-41d9bb462e09}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\AI\GameDfine_AI">
-      <UniqueIdentifier>{eb81c1f1-b639-4354-9d95-661cd6681210}</UniqueIdentifier>
+      <UniqueIdentifier>{f91359d8-9bca-4ebf-9836-9c9c72e75852}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\Obj">
-      <UniqueIdentifier>{809ccb0b-ebc0-4116-a840-3fb77130fe3a}</UniqueIdentifier>
+      <UniqueIdentifier>{f488c692-c7e3-4e62-aa3d-da35518e6bdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Utils">
+      <UniqueIdentifier>{8b73fe68-07c9-490d-b745-e61467dc996b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{80395b9d-9c0e-4292-8171-768803277730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bridge">
+      <UniqueIdentifier>{7959b8c1-0e2c-494e-b78d-2e42f46399a5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

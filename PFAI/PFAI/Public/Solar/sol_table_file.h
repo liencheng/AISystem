@@ -76,18 +76,22 @@ namespace solar {
 	public:
 		explicit table_file(const std::string& file, bool multiplyid = false)
 		{
-			//std::ifstream file(file);
-			//std::string line;
-			//while (getline(file, line)) {
-			//	table_lines.push_back(line);
-			//}
 		}
 		~table_file() {};
 
+		int32_t get_record_count() const
+		{
+			return static_cast<int32_t>(m_table_lines.size());
+		}
+
+		int32_t get_filed_count() const
+		{
+			return m_table_filed_vec.size();
+		}
 
 		const std::string& get_table_string(int32_t index, int32_t filed_num) const
 		{
-			return table_lines[index][filed_num];
+			return m_table_lines[index][filed_num];
 		}
 
 		void read_filed_type(const std::string& filed_type_line)
@@ -109,14 +113,13 @@ namespace solar {
 			}
 		}
 
-		void load(const std::string& file_path, const std::string& file_name)
+		void load(const std::string& file_path)
 		{
 			m_file_path = file_path;
-			m_file_name = file_name;
-			table_lines.clear();
+			m_table_lines.clear();
 			m_table_filed_vec.clear();
 
-			std::string full_path = m_file_path + "/" + m_file_name;
+			std::string full_path = m_file_path;
 			std::ifstream file(full_path);
 
 			if (!file.is_open()) {
@@ -143,57 +146,61 @@ namespace solar {
 				}
 				table_line line_vec;
 				if (!line.empty()) {
-					continue;
-					table_lines.push_back(line);
+					std::stringstream ss(line);
+					std::string value;
+					while (std::getline(ss, value, '\t')) {
+						line_vec.push_back(value);
+					}
+					if (!line_vec.empty()) {
+						m_table_lines.push_back(line_vec);
+					}
 				}
 			}
 
-			for (const auto& line : table_lines) {
-				std::stringstream ss(line);
-				int32_t value;
-				while (ss >> value) {
-					m_table_filed_vec.push_back(value);
-				}
-			}
 		}
 
 	public:
-		void read(int8_t& value, int32_t index, int32_t filed_num)
+		void read(int8_t& value, int32_t index, int32_t filed_num) const
 		{
 			std::string val = get_table_string(index, filed_num);
 			value = std::stoi(val);
 		}
-		void read(int16_t& value, int32_t index, int32_t filed_num)
+		void read(int16_t& value, int32_t index, int32_t filed_num) const
 		{
 			std::string val = get_table_string(index, filed_num);
 			value = std::stoi(val);
 		}
-		void read(int32_t& value, int32_t index, int32_t filed_num)
+		void read(int32_t& value, int32_t index, int32_t filed_num) const
 		{
 			std::string val = get_table_string(index, filed_num);
 			value = std::stoi(val);
 		}
-		void read(int64_t& value, int32_t index, int32_t filed_num)
+		void read(int64_t& value, int32_t index, int32_t filed_num) const
 		{
 			std::string val = get_table_string(index, filed_num);
 			value = std::stoll(val);
 		}
-		void read(float& value, int32_t index, int32_t filed_num)
+		void read(float& value, int32_t index, int32_t filed_num) const
 		{
 			std::string val = get_table_string(index, filed_num);
 			value = std::stof(val);
 		}
-		void read(double& value, int32_t index, int32_t filed_num)
+		void read(double& value, int32_t index, int32_t filed_num) const
 		{
 			std::string val = get_table_string(index, filed_num);
 			value = std::stod(val);
 		}
-		void read(bool& value, int32_t index, int32_t filed_num)
+		void read(bool& value, int32_t index, int32_t filed_num) const
 		{
 			std::string val = get_table_string(index, filed_num);
 			value = std::stoi(val) != 0;
 		}
-		void read(std::string& value, int32_t index, int32_t filed_num)
+		void read(std::string& value, int32_t index, int32_t filed_num) const
+		{
+			value = get_table_string(index, filed_num);
+		}
+
+		void read(table_string& value, int32_t index, int32_t filed_num) const
 		{
 			value = get_table_string(index, filed_num);
 		}
@@ -203,7 +210,7 @@ namespace solar {
 		std::string m_file_name;
 
 		std::vector<int32_t> m_table_filed_vec;
-		std::vector<table_line> table_lines;
+		std::vector<table_line> m_table_lines;
 
 	};
 };

@@ -2,6 +2,7 @@
 #include "Solar/sol_assert.h"
 #include "Solar/sol_table.h"
 #include "Solar/sol_table_file.h"
+#include "Utils/Log.h"
 
 class Public
 {
