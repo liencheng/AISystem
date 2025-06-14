@@ -9,7 +9,8 @@
 class Editor
 {
 public:
-    Editor() {};
+    Editor() {
+    };
     ~Editor() {}
 
     void Init()
@@ -51,6 +52,7 @@ int main(int argc, char* argv[])
 	LoadTable();
     //##################################################################################################
     Editor editor;
+	editor.Init();
     int64_t totalTime = 0;
     while (true)
     {

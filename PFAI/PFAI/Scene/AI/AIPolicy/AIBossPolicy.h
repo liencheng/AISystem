@@ -1,10 +1,10 @@
 #pragma once
 #include "IAIPolicy.h"
 
-class AIBossPolicy:IAIPolicy
+class AIBossPolicy: public IAIPolicy
 {
 public:
-    AIBossPolicy(){};
+    AIBossPolicy(const Obj_Char *pOwner):IAIPolicy(pOwner){ };
 public:
     virtual void Update(float fDeltaTime) override;
     virtual IBehavior* Decision() override;

@@ -1,3 +1,4 @@
+#include "Public.h"
 #include "IAIPolicy.h"
 
 
@@ -11,6 +12,31 @@ void IAIPolicy::Update(float fDeltaTime)
         UpdateView();
         UpdateDbg();
     }
+}
+
+void IAIPolicy::Init()
+{
+	// Initialize AIKnowledge if it is not already initialized
+	if (m_pAIKnowledge == nullptr)
+	{
+		m_pAIKnowledge = new AIKnowledge();
+		if (m_pAIKnowledge)
+		{
+			m_pAIKnowledge->Init(m_pOwner);
+		}
+		else
+		{
+			LOG_ERROR("Failed to create AIKnowledge instance.");
+		}
+	}
+	// Initialize behaviors if needed
+	for (auto& behavior : m_vecBehavior)
+	{
+		if (behavior)
+		{
+			behavior->Init();
+		}
+	}
 }
 
 void IAIPolicy::UpdateView()

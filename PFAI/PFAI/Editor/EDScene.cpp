@@ -1,4 +1,6 @@
+#include "Public.h"
 #include "EDScene.h"
+#include "../Scene/Obj/Obj_Char.h"
 
 EDScene::EDScene()
 {
@@ -10,7 +12,16 @@ EDScene::~EDScene()
 }
 void EDScene::Init()
 {
-	// Initialize the scene, load resources, etc.
+	Obj_Char* pChar = new Obj_Char();
+	if (pChar)
+	{
+		pChar->Init();
+		AddChar(pChar);
+	}
+	else
+	{
+		LOG_ERROR("Failed to create Obj_Char instance.");
+	}
 }
 void EDScene::Release()
 {
