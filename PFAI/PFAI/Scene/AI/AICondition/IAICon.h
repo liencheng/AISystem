@@ -12,7 +12,8 @@ public:
     virtual ~IAICon() = default; // Virtual destructor for proper cleanup
     
     int32_t GetId() const { return m_CfgId; } // Get the ID of the condition
-    virtual bool IsSatisfy(Obj_Char * pOwner) {MAYBE_DEBUG;}
+    virtual bool IsSatisfy(Obj_Char * pOwner) {MAYBE_DEBUG; return false; } // Check if the condition is satisfied
+
 
 protected:
     int32_t     m_CfgId = 0; // ID of the condition,link to AIConditionCfg.txt

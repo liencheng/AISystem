@@ -3,6 +3,9 @@
 
 class AIBSkill:IBehavior
 {
+public:
+   AIBSkill(Obj_Char * pOwner, Table_NpcAIBehavior * pBehavior):IBehavior(pOwner, pBehavior){  }
+   virtual ~AIBSkill(){};
 private:
    int32_t m_nSkillId = -1; // Skill ID
 public:

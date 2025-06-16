@@ -7,7 +7,7 @@ using NPCVector = std::vector<Obj_NPC*>;
 using PlayerVector = std::vector<Obj_Player*>;
 using CharVector = std::vector<Obj_Char*>;
 
-class EDScene
+class EDScene: public Scene
 {
 public:
 	EDScene();

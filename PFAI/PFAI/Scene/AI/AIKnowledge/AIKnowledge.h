@@ -15,27 +15,28 @@
 class AIKnowledge
 {
 public:
-   AIKnowledge(Scene *pScene, Obj_Char *pChar):m_pScene(pScene), m_pPlayer(pChar) {
+   AIKnowledge(Obj_Char *pChar):m_pOwner(pChar) {
       InitGoals();
+      m_pScene = m_pOwner->GetScene();
    };
    ~AIKnowledge(){}
    void InitGoals();
 
 private:
    Scene *            m_pScene = nullptr;
-   Obj_Char *         m_pPlayer = nullptr;
-   std::vector<IGoal*>     m_vecGoals;
+   Obj_Char *         m_pOwner = nullptr;
+   std::vector<IGoal>     m_vecGoals;
    std::vector<AISignal>   m_vecSignals;
 
    bool              m_bDirty;
 
 public:
-   Obj_Char *  GetPlayer() const{ return m_pPlayer; }
+   Obj_Char *  GetPlayer() const{ return m_pOwner; }
    Scene *     GetScene() const{ return m_pScene; }
  void Update();
 
- bool AddGoals(IGoal *pGoal);
- bool DelGoals(IGoal *pGoal);
+ bool AddGoals(IGoal &pGoal);
+ bool DelGoals(IGoal &pGoal);
 
  bool ProduceSignal(const AISignal &signal);
  bool ConsumeSignal(const AISignal &signal);

@@ -22,7 +22,7 @@ enum class PatrolType
 class AIBPatrol:IBehavior
 {
 public:
-    AIBPatrol(Obj_Char *owner):IBehavior(owner){}
+    AIBPatrol(Obj_Char * pOwner, Table_NpcAIBehavior * pBehavior):IBehavior(pOwner, pBehavior){  }
     ~AIBPatrol() = default;
 
     void OnStart() override;

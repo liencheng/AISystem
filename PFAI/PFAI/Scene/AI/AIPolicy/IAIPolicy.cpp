@@ -1,13 +1,15 @@
 #include "Public.h"
 #include "IAIPolicy.h"
+#include "Utils/Utils.h"
+#include "../AIBehavior/BehaviorFactory.h"
 
 
 void IAIPolicy::Update(float fDeltaTime)
 {
-    if(IsBehaviorDirty() == true || m_pAIKnowledge->IsDirty())
+    if(IsBehaviorDirty() == true || m_pAIKnowledge.IsDirty())
     {
         ClearBehaviorDirty();
-        m_pAIKnowledge->ClearDirty();
+        m_pAIKnowledge.ClearDirty();
 
         UpdateView();
         UpdateDbg();
@@ -16,27 +18,46 @@ void IAIPolicy::Update(float fDeltaTime)
 
 void IAIPolicy::Init()
 {
-	// Initialize AIKnowledge if it is not already initialized
-	if (m_pAIKnowledge == nullptr)
-	{
-		m_pAIKnowledge = new AIKnowledge();
-		if (m_pAIKnowledge)
-		{
-			m_pAIKnowledge->Init(m_pOwner);
-		}
-		else
-		{
-			LOG_ERROR("Failed to create AIKnowledge instance.");
-		}
-	}
-	// Initialize behaviors if needed
-	for (auto& behavior : m_vecBehavior)
-	{
-		if (behavior)
-		{
-			behavior->Init();
-		}
-	}
+    InitBehaviorFromCfg();
+}
+
+void IAIPolicy::InitBehaviorFromCfg()
+{
+    int32_t nNpcDataId = m_pOwner->GetDataID();
+    Table_NpcAIPolicyRoot * pRoot = TABLE_GET_BY_ID(Table_NpcAIPolicyRoot)(nNpcDataId);
+    if(nullptr == pRoot)
+    {
+        LOG_ERROR("IAIPolicy::InitBehaviorFromCfg, nNpcDataId = " + std::to_string(nNpcDataId));
+        return;
+    }
+    
+    Table_NpcAIPolicy * pPolicy = TABLE_GET_BY_ID(Table_NpcAIPolicy)(pRoot->GetId());
+    if(nullptr == pPolicy)
+    {
+        LOG_ERROR("IAIPolicy::InitBehaviorFromCfg, nNpcDataId = " + std::to_string(nNpcDataId));
+        return;
+    }
+
+    std::string strBehaviorList = pPolicy->GetBehaviorList();
+    std::vector<int32_t> vecBehaviorList = solar::StringUtils::SplitString(strBehaviorList);
+
+    if(vecBehaviorList.empty() == true)
+    {
+        LOG_ERROR("IAIPolicy::InitBehaviorFromCfg vecBehaviorList.Empty, nNpcDataId = " + std::to_string(nNpcDataId));
+        return;
+    }
+
+    for (auto & id : vecBehaviorList)
+    {
+        IBehavior * pBehavior = BehaviorFactory::Create(m_pOwner, id);
+        if(nullptr == pBehavior)
+        {
+            LOG_ERROR("IAIPolicy::InitBehaviorFromCfg, NpcID = " + std::to_string(nNpcDataId) + ", id = " + std::to_string(id));
+            continue;
+        }
+        AddBehavior(pBehavior);
+        LOG_INFO("IAIPolicy::InitBehaviorFromCfg, NpcID = " + std::to_string(nNpcDataId) + ", id = " + std::to_string(id));
+    }
 }
 
 void IAIPolicy::UpdateView()

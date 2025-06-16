@@ -1,19 +1,25 @@
 #pragma once
-#include "AIBehaviorInfo.h"
-#include "../GameDfine_AI/AIDefine.h"
 #include <vector>
+#include "Public.h"
+#include "AIBehaviorInfo.h"
 
-#include "../../Obj/Obj_Char.h"
+#include "../GameDfine_AI/AIDefine.h"
 #include "../AICondition/IAICon.h"
+#include "../../Obj/Obj_Char.h"
+
 
 //todo: 可以考虑把Condtion从行为类中剥离出来， 用于多个行为类公用，以提供性能
 class IBehavior
 {
 public:
-    IBehavior(Obj_Char * owner):m_Owner(owner){}
+    IBehavior(Obj_Char * owner, const Table_NpcAIBehavior * pBehavior):
+    m_Owner(owner),
+    m_pBehavior(pBehavior)
+    {}
 protected:
     //AIBehaviorInfo              m_behaviorInfo; // Pointer to the behavior information
     Obj_Char *                  m_Owner = nullptr; // Pointer to the owner of the behavior
+    const Table_NpcAIBehavior * m_pBehavior = nullptr; // Pointer to the behavior information table
     std::vector<IAICon>       m_vecConditions; // List of conditions associated with the behavior
     std::vector<const AISignal*>     m_vecSignals; // List of signals associated with the behavior
     std::vector<const IGoal*>       m_vecGoals; // List of goals associated with the behavior

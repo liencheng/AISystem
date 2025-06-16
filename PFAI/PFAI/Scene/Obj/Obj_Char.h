@@ -9,8 +9,10 @@
 class Obj_Char
 {
 
-public:
+private:
     IAIPolicy * pAI;
+    Scene * pScene;
+
 public:
     // Constructor
     Obj_Char();
@@ -27,4 +29,6 @@ public:
     int64_t GetHP()const{ return  0;}
     int64_t GetMP()const{ return  0;}
     bool IsInCombat()const {return  false;}
+    Scene * GetScene()const{ return  pScene;}
+    int64_t GetDataID() const { return 0; } // TODO: 实现获取角色DataID的逻辑
 };

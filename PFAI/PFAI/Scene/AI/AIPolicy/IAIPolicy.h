@@ -15,19 +15,25 @@
 class IAIPolicy
 {
 public:
-	IAIPolicy(const Obj_Char* pOwner) :m_pOwner(pOwner) {};
+	IAIPolicy(Obj_Char* pOwner) :m_pOwner(pOwner), m_pAIKnowledge(pOwner) 
+	{
+		Init();
+	};
 protected:
-	AIKnowledge* m_pAIKnowledge;
+	AIKnowledge m_pAIKnowledge;
 	std::vector<IBehavior*> m_vecBehavior;
 	std::vector<IDbgNess* > m_vecDbgNodes; // 调试节点
 	IBehavior* m_pCurrentBehavior = nullptr;
 	E_AIPolicyType m_ePolicyType = E_AIPolicyType::AIPolicyType_None;
 	bool       m_bBehaviorDirty = false; // 行为是否改变
-	const Obj_Char* m_pOwner = nullptr; // AI策略的拥有者，通常是一个角色对象
+	Obj_Char* m_pOwner = nullptr; // AI策略的拥有者，通常是一个角色对象
+	Scene* m_pScene = nullptr; // AI策略所在的场景
+
+	
 
 public:
 	virtual void        Update(float fDeltaTime);
-	virtual void		 Init();
+	virtual void		Init();
 	virtual IBehavior* Decision() = 0;
 	virtual IBehavior* SelectBestBehavior() const = 0;
 
@@ -35,6 +41,8 @@ public:
  void                UpdateView();
  void                UpdateDbg();
  
+ void        InitBehaviorFromCfg();
+ void        InitGoalSensorFromCfg();
  bool        AddBehavior(IBehavior* pBehavior);
  bool        DelBehavior(IBehavior* pBehavior);
 
@@ -42,7 +50,7 @@ public:
  void        ClearBehaviorDirty() { m_bBehaviorDirty = false; }
  bool        IsBehaviorDirty() const { return m_bBehaviorDirty; }
  
- AIKnowledge*        GetAIKnowledge()const { return m_pAIKnowledge; }        
+ AIKnowledge&        GetAIKnowledge()const { return const_cast<AIKnowledge&>(m_pAIKnowledge); }        
  IDbgNess*           GetDbgNode(int32_t id) const;
  const Obj_Char* GetOwner() const { return m_pOwner; }
 
