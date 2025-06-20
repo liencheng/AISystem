@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -161,12 +161,14 @@
     <ClCompile Include="Public\DataDefine.cpp" />
     <ClCompile Include="Public\Public.cpp" />
     <ClCompile Include="Public\Table\Table_All_Impl.cpp" />
+    <ClCompile Include="Public\Utils\GenId.cpp" />
     <ClCompile Include="Routine\GameStruct_Scene.cpp" />
     <ClCompile Include="Routine\Scene.cpp" />
     <ClCompile Include="Scene\AI\AIBehavior\AIBehaviorInfo.cpp" />
     <ClCompile Include="Scene\AI\AIBehavior\AIBPatrol.cpp" />
     <ClCompile Include="Scene\AI\AIBehavior\AIBSkill.cpp" />
     <ClCompile Include="Scene\AI\AIBehavior\IBehavior.cpp" />
+    <ClCompile Include="Scene\AI\AICondition\AIConFactory.cpp" />
     <ClCompile Include="Scene\AI\AICondition\AIConGotoPoint.cpp" />
     <ClCompile Include="Scene\AI\AICondition\AIConHP.cpp" />
     <ClCompile Include="Scene\AI\AICondition\AIConInCombat.cpp" />
@@ -199,14 +201,32 @@
     <ClInclude Include="Public\Table\Table_NpcAIGoalSensor.h" />
     <ClInclude Include="Public\Table\Table_NpcAIPolicy.h" />
     <ClInclude Include="Public\Table\Table_NpcAIPolicyRoot.h" />
+    <ClInclude Include="Public\Utils\fmt\args.h" />
+    <ClInclude Include="Public\Utils\fmt\base.h" />
+    <ClInclude Include="Public\Utils\fmt\chrono.h" />
+    <ClInclude Include="Public\Utils\fmt\color.h" />
+    <ClInclude Include="Public\Utils\fmt\compile.h" />
+    <ClInclude Include="Public\Utils\fmt\core.h" />
+    <ClInclude Include="Public\Utils\fmt\format-inl.h" />
+    <ClInclude Include="Public\Utils\fmt\format.h" />
+    <ClInclude Include="Public\Utils\fmt\os.h" />
+    <ClInclude Include="Public\Utils\fmt\ostream.h" />
+    <ClInclude Include="Public\Utils\fmt\printf.h" />
+    <ClInclude Include="Public\Utils\fmt\ranges.h" />
+    <ClInclude Include="Public\Utils\fmt\std.h" />
+    <ClInclude Include="Public\Utils\fmt\xchar.h" />
+    <ClInclude Include="Public\Utils\GenId.h" />
     <ClInclude Include="Public\Utils\Logger.h" />
     <ClInclude Include="Public\Utils\Time.h" />
+    <ClInclude Include="Public\Utils\Utils.h" />
     <ClInclude Include="Routine\GameStruct_Scene.h" />
     <ClInclude Include="Routine\Scene.h" />
     <ClInclude Include="Scene\AI\AIBehavior\AIBehaviorInfo.h" />
     <ClInclude Include="Scene\AI\AIBehavior\AIBPatrol.h" />
     <ClInclude Include="Scene\AI\AIBehavior\AIBSkill.h" />
+    <ClInclude Include="Scene\AI\AIBehavior\BehaviorFactory.h" />
     <ClInclude Include="Scene\AI\AIBehavior\IBehavior.h" />
+    <ClInclude Include="Scene\AI\AICondition\AIConFactory.h" />
     <ClInclude Include="Scene\AI\AICondition\AIConGotoPoint.h" />
     <ClInclude Include="Scene\AI\AICondition\AIConHP.h" />
     <ClInclude Include="Scene\AI\AICondition\AIConInCombat.h" />
@@ -220,6 +240,8 @@
     <ClInclude Include="Scene\AI\AIDebugable\DbgController.h" />
     <ClInclude Include="Scene\AI\AIDebugable\DbgInfo.h" />
     <ClInclude Include="Scene\AI\AIDebugable\IDbgNess.h" />
+    <ClInclude Include="Scene\AI\AISignal\AISignal.h" />
+    <ClInclude Include="Scene\AI\AISignal\AISignalDispacher.h" />
     <ClInclude Include="Scene\AI\GameDfine_AI\AIDefine.h" />
     <ClInclude Include="Scene\Obj\Obj_Char.h" />
     <ClInclude Include="Scene\Obj\Obj_NPC.h" />

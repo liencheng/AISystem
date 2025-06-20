@@ -1,11 +1,59 @@
 #include "IBehavior.h"
+#include "Utils/Utils.h"
+#include "../AICondition/AIConFactory.h"
+
+
+IBehavior::~IBehavior()
+{
+	// Clean up conditions
+	for (auto condition : m_vecConditions)
+	{
+		delete condition; // Assuming IAIcon is not a pointer, so we delete the reference
+	}
+	m_vecConditions.clear();
+}
+
+void IBehavior::Init(const Table_NpcAIBehavior* pBCfg)
+{
+	SOL_ASSERT(pBCfg != nullptr, "IBehavior::Init, pBCfg is null");
+	m_nId = pBCfg->GetId();
+	m_fCDs = pBCfg->GetCD();
+	m_nTimeout = pBCfg->GetTimeout();
+	m_nPrority = pBCfg->GetProprity();
+	// Initialize conditions
+	std::string conditionList = pBCfg->GetConditionList();
+	if (!conditionList.empty())
+	{
+		std::vector<int32_t> conditions = solar::StringUtils::SplitString(conditionList);
+		for (const auto& con : conditions)
+		{
+			Table_NpcAICondition* pCondition = TABLE_GET_BY_ID(Table_NpcAICondition)(con);
+			if (pCondition)
+			{
+				IAICon* pAICon = AIConFactory::CreateAICondition(pCondition);
+				if (pAICon)
+				{
+					m_vecConditions.push_back(pAICon);
+				}
+				else
+				{
+					LOG_ERROR("IBehavior::Init, CreateAICondition failed, CfgId:{}, ConditionId:{}", m_nId, con);
+				}
+			}
+			else
+			{
+				LOG_ERROR("IBehavior::Init, ConditionCfg is null, CfgId:{}, ConditionId:{}", m_nId, con);
+			}
+		}
+	}
+}
 
 
 bool IBehavior::IsSatisfyCondition(const AIKnowledge* pKnowledge)
 {
     for (auto condition : m_vecConditions)
     {
-        if (!condition.IsSatisfy(pKnowledge->GetPlayer()))
+        if (!condition->IsSatisfy(pKnowledge->GetPlayer()))
         {
             return false;
         }
@@ -16,7 +64,7 @@ bool IBehavior::IsSatisfyCondition(const AIKnowledge* pKnowledge)
 
 int32_t IBehavior::GetFinalWeight() const
 {
-    return GetWeightOfGoal() + GetWeightOfPriority() + GetWeightOfSignal();
+    return m_nPrority;
 }
 
 int32_t IBehavior::GetWeightOfGoal() const

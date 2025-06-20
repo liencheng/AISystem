@@ -4,10 +4,10 @@
 #include "IAICon.h"
 #include "../../../Public/DataDefine.h"
 
-class AIConGotoPoint:IAICon
+class AIConGotoPoint:public IAICon
 {
 public:
-    AIConGotoPoint(int32_t cfgid):IAICon(cfgid)
+    AIConGotoPoint(const Table_NpcAICondition* pCon) :IAICon(pCon)
     {
         Init();
     }

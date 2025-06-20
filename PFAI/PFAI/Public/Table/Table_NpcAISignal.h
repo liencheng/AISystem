@@ -3,7 +3,7 @@
 
  #include "sol_table.h"
 
-class Table_NpcAIGoalSensor
+class Table_NpcAISignal
  {
  public:
  enum _ID
@@ -58,6 +58,6 @@ private:
 
 };
  
- TABLE_ENTITY_DECL(Table_NpcAIGoalSensor);
+ TABLE_ENTITY_DECL(Table_NpcAISignal);
 
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include "IAICon.h"
+#include "Public.h"
 #include "../../Obj/Obj_Char.h"
 
 enum class E_AI_ConMP_OP
@@ -14,13 +15,20 @@ enum class E_AI_ConMP_OP
     None = 6, // None
 };
 
-class AIConMP:IAICon
+class AIConMP:public IAICon
 {
 public:
-    AIConMP(int64_t nMP, E_AI_ConMP_OP eOp)
-        :m_nMP(nMP), m_eOp(eOp)
+    AIConMP(const Table_NpcAICondition * pCon):IAICon(pCon)
     {
-        
+		if (pCon)
+		{
+			m_nMP = pCon->GetParambyIndex(0); // Assuming the first parameter is MP
+			m_eOp = static_cast<E_AI_ConMP_OP>(pCon->GetParambyIndex(1)); // Assuming the second parameter is the operation type
+		}
+		else
+		{
+			LOG_ERROR("AIConMP: pCon is null!");
+		}
     }
     ~AIConMP() = default;
     

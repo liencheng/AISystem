@@ -83,6 +83,10 @@
     <ClCompile Include="Editor\EDScene.cpp">
       <Filter>Editor</Filter>
     </ClCompile>
+    <ClCompile Include="Scene\AI\AICondition\AIConFactory.cpp">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClCompile>
+    <ClCompile Include="Public\Utils\GenId.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\DataDefine.h">
@@ -199,6 +203,64 @@
     <ClInclude Include="Bridge\IBridge.h">
       <Filter>Bridge</Filter>
     </ClInclude>
+    <ClInclude Include="Public\Utils\Utils.h">
+      <Filter>Public\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AICondition\AIConFactory.h">
+      <Filter>Scene\AI\AICondition</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\args.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\base.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\chrono.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\color.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\compile.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\core.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\format.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\format-inl.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\os.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\ostream.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\printf.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\ranges.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\std.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\fmt\xchar.h">
+      <Filter>Public\Utils\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AIBehavior\BehaviorFactory.h">
+      <Filter>Scene\AI\AIBehavior</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Utils\GenId.h" />
+    <ClInclude Include="Scene\AI\AISignal\AISignal.h">
+      <Filter>Scene\AI\AISignal</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\AI\AISignal\AISignalDispacher.h">
+      <Filter>Scene\AI\AISignal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Public">
@@ -251,6 +313,12 @@
     </Filter>
     <Filter Include="Bridge">
       <UniqueIdentifier>{7959b8c1-0e2c-494e-b78d-2e42f46399a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Utils\fmt">
+      <UniqueIdentifier>{02de25ed-1117-4193-93ac-c449b02d156b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\AI\AISignal">
+      <UniqueIdentifier>{3169d4d3-bfa4-46f5-a987-51b4019983ee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

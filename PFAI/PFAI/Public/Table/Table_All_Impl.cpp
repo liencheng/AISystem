@@ -8,6 +8,8 @@
 
 
 
+
+
 bool Table_NpcAIBehavior::load(const solar::table_file &rDB, int32_t nRow)
  {
  __SOL_TRACE
@@ -24,6 +26,8 @@ rDB.read(m_Param[4],nRow,(int32_t)ID_PARAM_4);
 rDB.read(m_Param[5],nRow,(int32_t)ID_PARAM_5);
 rDB.read(m_Param[6],nRow,(int32_t)ID_PARAM_6);
 rDB.read(m_Param[7],nRow,(int32_t)ID_PARAM_7);
+rDB.read(m_Proprity,nRow,(int32_t)ID_PROPRITY);
+rDB.read(m_Timeout,nRow,(int32_t)ID_TIMEOUT);
 rDB.read(m_Type,nRow,(int32_t)ID_TYPE);
 
  return true;
@@ -94,12 +98,14 @@ rDB.read(m_Type,nRow,(int32_t)ID_TYPE);
 
 
 
+
 bool Table_NpcAIGoalSensor::load(const solar::table_file &rDB, int32_t nRow)
  {
  __SOL_TRACE
  
  SOL_ASSERT(ID_TAB_CURCOL_COUNT==rDB.get_filed_count(), "NpcAIGoalSensor Columns Differ"); 
- rDB.read(m_ConditionList,nRow,(int32_t)ID_CONDITIONLIST);
+ rDB.read(m_BehaviorList,nRow,(int32_t)ID_BEHAVIORLIST);
+rDB.read(m_ConditionList,nRow,(int32_t)ID_CONDITIONLIST);
 rDB.read(m_Id,nRow,(int32_t)ID_ID);
 rDB.read(m_Name,nRow,(int32_t)ID_NAME);
 rDB.read(m_Prority,nRow,(int32_t)ID_PRORITY);
@@ -183,6 +189,45 @@ rDB.read(m_PolicyId,nRow,(int32_t)ID_POLICYID);
 
 
  TABLE_ENTITY_IMPL(Table_NpcAIPolicyRoot);
+
+#endif 
+ 
+
+/*Auto Created by Robot, Don't try to Modify*/
+#include "Public.h"
+ #if defined(_GAMESERVER_)
+ #include "Table_NpcAISignal.h"
+
+
+
+
+
+
+
+bool Table_NpcAISignal::load(const solar::table_file &rDB, int32_t nRow)
+ {
+ __SOL_TRACE
+ 
+ SOL_ASSERT(ID_TAB_CURCOL_COUNT==rDB.get_filed_count(), "NpcAISignal Columns Differ"); 
+ rDB.read(m_BehaviorList,nRow,(int32_t)ID_BEHAVIORLIST);
+rDB.read(m_ConditionList,nRow,(int32_t)ID_CONDITIONLIST);
+rDB.read(m_Id,nRow,(int32_t)ID_ID);
+rDB.read(m_Name,nRow,(int32_t)ID_NAME);
+rDB.read(m_Prority,nRow,(int32_t)ID_PRORITY);
+rDB.read(m_Type,nRow,(int32_t)ID_TYPE);
+
+ return true;
+ SOL_TRACE__
+ return false;
+ }
+ 
+ const char * Table_NpcAISignal::file_path(void)
+ {
+ return "Config/NpcAISignal.txt";
+ }
+
+
+ TABLE_ENTITY_IMPL(Table_NpcAISignal);
 
 #endif 
  

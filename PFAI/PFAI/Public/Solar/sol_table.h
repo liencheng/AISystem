@@ -1,5 +1,4 @@
 #pragma once
-
 #include "sol_table_file.h"
 
 

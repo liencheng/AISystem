@@ -6,11 +6,12 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
+#include "./fmt/core.h"
 
-#define LOG_FATAL(message) utils::Logger::getInstance().log(utils::LogLevel::Fatal, __FILE__ ":" + std::to_string(__LINE__) + " - " + message)
-#define LOG_ERROR(message) utils::Logger::getInstance().log(utils::LogLevel::Error, __FILE__ ":" + std::to_string(__LINE__) + " - " + message)
-#define LOG_WARNING(message) utils::Logger::getInstance().log(utils::LogLevel::Warning, __FILE__ ":" + std::to_string(__LINE__) + " - " + message)
-#define LOG_INFO(message) utils::Logger::getInstance().log(utils::LogLevel::Info, __FILE__ ":" + std::to_string(__LINE__) + " - " + message)
+#define LOG_FATAL(message, ...) utils::Logger::getInstance().log(utils::LogLevel::Fatal, __FILE__ ":" + std::to_string(__LINE__) + " - " + fmt::format(message, ##__VA_ARGS__))
+#define LOG_ERROR(message, ...) utils::Logger::getInstance().log(utils::LogLevel::Error, __FILE__ ":" + std::to_string(__LINE__) + " - " + fmt::format(message, ##__VA_ARGS__))
+#define LOG_WARNING(message, ...) utils::Logger::getInstance().log(utils::LogLevel::Warning, __FILE__ ":" + std::to_string(__LINE__) + " - " + fmt::format(message, ##__VA_ARGS__))
+#define LOG_INFO(message, ...) utils::Logger::getInstance().log(utils::LogLevel::Info, __FILE__ ":" + std::to_string(__LINE__) + " - " + fmt::format(message, ##__VA_ARGS__))
 
 namespace utils {
 

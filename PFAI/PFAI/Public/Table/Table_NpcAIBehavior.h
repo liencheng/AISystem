@@ -11,7 +11,9 @@ class Table_NpcAIBehavior
  INVLAID_INDEX=-1,
 ID_ID,
 ID_CD=2,
+ID_TIMEOUT,
 ID_CONDITIONLIST,
+ID_PROPRITY,
 ID_TYPE,
 ID_PARAM_0,
 ID_PARAM_1,
@@ -57,6 +59,16 @@ public:
  if(idx>=0 && idx<8) return m_Param[idx];
  return -1;
  }
+
+private:
+ int32_t m_Proprity;
+ public:
+ int32_t GetProprity() const { return m_Proprity; }
+
+private:
+ int32_t m_Timeout;
+ public:
+ int32_t GetTimeout() const { return m_Timeout; }
 
 private:
  int32_t m_Type;

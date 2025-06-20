@@ -3,9 +3,12 @@
 #include "../AIPolicy/IAIPolicy.h"
 #include "../AIBehavior/IBehavior.h"
 #include "../AICondition/IAICon.h"
+#include "Utils/Logger.h"
 
 void AIBSkill::OnStart()
 {
+	IBehavior::OnStart();
+	LOG_INFO("AIBSkill::OnStart, SkillId:{}", m_nSkillId);
 }
 
 void AIBSkill::OnUpdate()
@@ -18,6 +21,7 @@ void AIBSkill::OnUpdate()
     }
     
     m_Owner->Caskill(m_nSkillId);
+	LOG_INFO("AIBSkill::OnUpdate, SkillId:{}", m_nSkillId);
     // Update the skill behavior
     OnEnd(E_AIBehaviorStatus::ABS_Succ);
 }
@@ -25,4 +29,5 @@ void AIBSkill::OnUpdate()
 void AIBSkill::OnEnd(E_AIBehaviorStatus result)
 {
     SetBehaviorStatus(result);
+	LOG_INFO("AIBSkill::OnEnd, SkillId:{}, Result:{}", m_nSkillId, static_cast<int>(result));
 }

@@ -1395,3 +1395,7 @@
 [0612/162629.377:INFO:CONSOLE(2)] "Extension->Webview(editorChangedEvent): [object Object]", source: file:///C:/users/administrator/appdata/local/microsoft/visualstudio/17.0_615ed973/extensions/sklkd2gc.jyc/WebView/Resources/autowork/chat.js (2)
 [0612/163503.895:INFO:CONSOLE(2)] "Extension->Webview(editorChangedEvent): [object Object]", source: file:///C:/users/administrator/appdata/local/microsoft/visualstudio/17.0_615ed973/extensions/sklkd2gc.jyc/WebView/Resources/autowork/chat.js (2)
 [0612/164901.050:INFO:CONSOLE(2)] "Extension->Webview(editorChangedEvent): [object Object]", source: file:///C:/users/administrator/appdata/local/microsoft/visualstudio/17.0_615ed973/extensions/sklkd2gc.jyc/WebView/Resources/autowork/chat.js (2)
+[0613/112604.591:WARNING:dns_config_service_win.cc(586)] Failed to read DnsConfig.
+[0613/112604.592:WARNING:dns_config_service_win.cc(586)] Failed to read DnsConfig.
+[0613/112609.610:WARNING:dns_config_service_win.cc(586)] Failed to read DnsConfig.
+[0613/112609.610:WARNING:dns_config_service_win.cc(586)] Failed to read DnsConfig.

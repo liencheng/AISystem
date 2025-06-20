@@ -8,7 +8,7 @@
 
 void AIBPatrol::OnStart()
 {
-    
+	IBehavior::OnStart();
 }
 
 void AIBPatrol::OnUpdate()
@@ -17,7 +17,7 @@ void AIBPatrol::OnUpdate()
 
     if(TimeOut())
     {
-        OnEnd();
+        OnEnd(E_AIBehaviorStatus::ABS_TimeOut);
     }
     // Perform patrol logic
     switch (m_pType)
@@ -37,14 +37,14 @@ void AIBPatrol::OnUpdate()
     }
 }
 
-void AIBPatrol::OnEnd()
+void AIBPatrol::OnEnd(E_AIBehaviorStatus result)
 {
     SetBehaviorStatus(E_AIBehaviorStatus::ABS_End);
 }
 
 bool AIBPatrol::Interrupt()
 {
-    OnEnd();
+    OnEnd(E_AIBehaviorStatus::ABS_End);
 }
 
 void AIBPatrol::SearchEnemy()

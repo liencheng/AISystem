@@ -2,10 +2,10 @@
 #include "IAICon.h"
 #include "../../Obj/Obj_Char.h"
 
-class AIConInCombat:IAICon
+class AIConInCombat:public IAICon
 {
 public:
-    AIConInCombat() = default;
+    AIConInCombat(const Table_NpcAICondition* pCon) :IAICon(pCon) {};
     ~AIConInCombat() = default;
 
 public:

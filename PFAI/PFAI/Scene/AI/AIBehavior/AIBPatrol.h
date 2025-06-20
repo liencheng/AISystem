@@ -19,15 +19,15 @@ enum class PatrolType
     SearchFriend = 3, // 搜索友方
 };
 
-class AIBPatrol:IBehavior
+class AIBPatrol: public IBehavior
 {
 public:
-    AIBPatrol(Obj_Char * pOwner, Table_NpcAIBehavior * pBehavior):IBehavior(pOwner, pBehavior){  }
+    AIBPatrol(Obj_Char * pOwner,const Table_NpcAIBehavior * pBehavior):IBehavior(pOwner, pBehavior){  }
     ~AIBPatrol() = default;
 
     void OnStart() override;
     void OnUpdate() override;
-    void OnEnd() override;
+    void OnEnd(E_AIBehaviorStatus result) override;
     bool Interrupt() override;
 
 private:

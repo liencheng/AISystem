@@ -16,13 +16,21 @@ enum class E_AI_ConHP_OP
     
 };
 
-class AIConHP:IAICon
+class AIConHP:public IAICon
 {
 public:
-    AIConHP(int64_t nHP, E_AI_ConHP_OP eOp)
-        :m_nHP(nHP), m_eOp(eOp)
+    AIConHP(const Table_NpcAICondition * pCon):IAICon(pCon)
     {
-        
+		if (pCon)
+		{
+			m_nHP = pCon->GetParambyIndex(0);
+			m_eOp = static_cast<E_AI_ConHP_OP>(pCon->GetParambyIndex(1));
+		}
+		else
+		{
+			m_nHP = 0;
+			m_eOp = E_AI_ConHP_OP::None;
+		}
     }
     ~AIConHP() = default;
 public:  
@@ -48,7 +56,6 @@ public:
                 return false;
         }
     }
-private:
     int64_t m_nHP = 0; // Health points
     E_AI_ConHP_OP m_eOp = E_AI_ConHP_OP::None; // Operation type
     

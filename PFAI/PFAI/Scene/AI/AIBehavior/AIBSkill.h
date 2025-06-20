@@ -1,10 +1,10 @@
 #pragma once
 #include "IBehavior.h"
 
-class AIBSkill:IBehavior
+class AIBSkill:public IBehavior
 {
 public:
-   AIBSkill(Obj_Char * pOwner, Table_NpcAIBehavior * pBehavior):IBehavior(pOwner, pBehavior){  }
+   AIBSkill(Obj_Char * pOwner, const Table_NpcAIBehavior * pBehavior):IBehavior(pOwner, pBehavior){  }
    virtual ~AIBSkill(){};
 private:
    int32_t m_nSkillId = -1; // Skill ID
@@ -13,8 +13,4 @@ public:
    virtual void OnUpdate() override;
    virtual void OnEnd(E_AIBehaviorStatus result) override;
 
-
-   
-   
-    
 };

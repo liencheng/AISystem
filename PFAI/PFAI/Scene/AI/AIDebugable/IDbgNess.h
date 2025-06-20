@@ -18,11 +18,13 @@ public:
     virtual ~IDbgNess() = default;
     int32_t         DbgGetId() const{return  m_nDbgId;}
 
-    /*激活调试*/
-    virtual DbgInfo FetchDbgInfo() const = 0;
-    bool    DbgManualReset(){ m_bDbgManualDisable = false; m_bDbgManualEnable =false;}
-    bool    DbgSetEnable() { m_bDbgManualEnable = true;}
-    bool    DbgSetDisable() { m_bDbgManualDisable = true;}
+    virtual DbgInfo FetchDbgInfo() const {
+		static DbgInfo dbgInfo;
+        return dbgInfo;
+    };
+    void    DbgManualReset(){ m_bDbgManualDisable = false; m_bDbgManualEnable =false;}
+    void    DbgSetEnable() { m_bDbgManualEnable = true;}
+    void    DbgSetDisable() { m_bDbgManualDisable = true;}
     bool    DbgIsManualEnable() const{ return  m_bDbgManualEnable; }
     bool    DbgIsManualDisable() const {return  m_bDbgManualDisable;}
 

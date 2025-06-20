@@ -2,7 +2,6 @@
 #pragma once
 
  #include "sol_table.h"
-#include <cstdint>
 
 class Table_NpcAICondition
  {

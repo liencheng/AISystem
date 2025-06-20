@@ -2,7 +2,7 @@
 #include "AIBSkill.h"
 #include "AIBPatrol.h"
 #include "Public.h"
-#include "../Obj/Obj_Char.h"
+#include "../../Obj/Obj_Char.h"
 
 class E_BehaviorType 
 {
