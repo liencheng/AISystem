@@ -1,0 +1,5 @@
+Id	Desc	GoalSensorList	GoalSensorPrority	BehaviorList
+INT	STRING	STRING	STRING	STRING
+#MAX_ID=1000;MAX_RECORD=1000;TableType=Hash;				
+#程序不读 Id（对应bt表的info列）	执行描述（程序不读）	索引到GoalSensor表格，用|分割	和GoalSensorList列一一对应，用于定义Goal的优先级。数值越大，优先级越高。	行为列表，定义该AI拥有哪些行为，索引到AIBehavior表格。用|分割。
+1	1	1|2|3	1|1|1	1|2|3

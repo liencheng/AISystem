@@ -1,0 +1,547 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
+  m_Name: 111
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 5743150995966525509
+  - rid: 5743150995966525538
+  - rid: 5743150995966525559
+  - rid: 5743150995966525564
+  - rid: 5743150995966525565
+  - rid: 5743150995966525566
+  - rid: 5743150995966525567
+  - rid: 5743150995966525588
+  - rid: 5743150995966525597
+  - rid: 5743150995966525598
+  - rid: 5743150995966525599
+  - rid: 5743150995966525600
+  - rid: 5743150995966525601
+  - rid: 5743150995966525602
+  - rid: 2948650080534790321
+  - rid: 2948650080534790338
+  - rid: 7599884921353011236
+  edges:
+  - GUID: 27aaa01c-5550-4af0-a139-e08b5a053481
+    owner: {fileID: 11400000}
+    inputNodeGUID: a0c473ae-0185-4e3e-a9ee-5c85926a96e2
+    outputNodeGUID: c4986e2f-705a-401f-b694-465e6b384fe1
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 8a1f81f6-544d-4b3c-bec9-41a448043ad4
+    owner: {fileID: 11400000}
+    inputNodeGUID: b66d8157-3057-4c44-a18d-5276789f8ca4
+    outputNodeGUID: 6ad2562c-27d9-4743-97db-937dac0a1f40
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e3d83f94-6e51-4a69-b1c5-3bacaada3040
+    owner: {fileID: 11400000}
+    inputNodeGUID: b66d8157-3057-4c44-a18d-5276789f8ca4
+    outputNodeGUID: 6bdcc95a-aa8e-4c50-99c2-df6df3eff8f8
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 892a5866-d7bc-4923-a3fc-069ee3311d03
+    owner: {fileID: 11400000}
+    inputNodeGUID: b66d8157-3057-4c44-a18d-5276789f8ca4
+    outputNodeGUID: f0eb965c-ea71-4ebf-b042-ba20368c5229
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 21a6d91a-17d5-4814-a459-6e6d8371d475
+    owner: {fileID: 11400000}
+    inputNodeGUID: b66d8157-3057-4c44-a18d-5276789f8ca4
+    outputNodeGUID: 89b2a155-7ef2-4d54-9ebe-750dbfbe1d4f
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 062af689-802e-4e5a-ab76-fcd69beab6c0
+    owner: {fileID: 11400000}
+    inputNodeGUID: c4986e2f-705a-401f-b694-465e6b384fe1
+    outputNodeGUID: b66d8157-3057-4c44-a18d-5276789f8ca4
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: c7f22e3b-298c-4391-a1c8-336a55dea417
+    owner: {fileID: 11400000}
+    inputNodeGUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+    outputNodeGUID: a0c473ae-0185-4e3e-a9ee-5c85926a96e2
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 7d196f1f-e494-4bb8-9550-e549b71ea50d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 85692e4a-e201-4685-93be-c2a8c6b5c7b7
+    outputNodeGUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: f2c29d21-a08b-4b1d-9bf3-5f4536bbda13
+    owner: {fileID: 11400000}
+    inputNodeGUID: 11493647-bc4f-458a-88b9-7417414cbdbc
+    outputNodeGUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: cf642bfa-f82f-4a14-b555-9016419759fd
+    owner: {fileID: 11400000}
+    inputNodeGUID: 981a0511-40e5-435b-a1c3-b47af55676c1
+    outputNodeGUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: c1fc630d-49a1-4909-8cc6-1d6e287f24e9
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2b5f5eee-c144-4c04-82d4-d50f51fb10c0
+    outputNodeGUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 28c2a6db-c8f0-4d10-a5e5-e630001d9134
+    owner: {fileID: 11400000}
+    inputNodeGUID: da789c55-a818-4fc9-a830-6744b14502e3
+    outputNodeGUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: f2dc23c1-caad-4b41-b39d-82f6f7000b5c
+    owner: {fileID: 11400000}
+    inputNodeGUID: 8bdaab37-d4b5-409b-8b08-90d74e4926c1
+    outputNodeGUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 559
+      width: 150
+      height: 200
+    opened: 0
+    editorType:
+      serializedType: GraphProcessor.ProcessorView, com.alelievr.NodeGraphProcessor.Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - position:
+      serializedVersion: 2
+      x: 67
+      y: 300
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 150
+      height: 200
+    opened: 0
+    editorType:
+      serializedType: ConditionalProcessorView, Assembly-CSharp-Editor, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - rid: 5743150904995479759
+  - rid: 5743150904995479765
+  serializedParameterList: []
+  stickyNotes:
+  - position:
+      serializedVersion: 2
+      x: 153
+      y: 286
+      width: 200
+      height: 300
+    title: Create Note
+    content: "Brain: \u5B9A\u4E49\u4E00\u4E2ABossNPC\u7684\u8DDF\u8282\u70B9\n\nAIPolicy:\u5B9A\u4E49NPC\u9009\u62E9\u884C\u4E3A\u7684\u7B56\u7565\uFF0C\u8FD9\u4E2A\u7B56\u7565\u601D\u8DEF\u662F\u4E00\u4E2A\u8DDF\u6743\u91CD\u8FDB\u884C\u9009\u62E9\u884C\u4E3A\n\nBehaviorList:
+      \u5B9A\u4E49\u67D0\u4E00\u7C7BNPC\u62E5\u6709\u54EA\u4E9B\u884C\u4E3A\n\nGoals:
+      \u7528\u4E8E\u5B9A\u4E49\u67D0\u5199\u73AF\u5883\u4E0BNPC\u5E94\u8BE5\u6709\u54EA\u4E9B\u76EE\u6807\uFF0C\u6700\u7EC8\u5F71\u54CD\u5230\u67D0\u4E00\u4E2A\u884C\u4E3A\u7684\u6743\u91CD\n\n\u5BF9\u6BD4\u884C\u4E3A\u6811\uFF1A\u53EF\u4EE5\u4E0D\u7528\u5173\u5FC3\u884C\u4E3A\u6811\u590D\u6742\u7684\u903B\u8F91"
+  nodeInspectorReference: {fileID: 0}
+  position: {x: -49, y: -39, z: 0}
+  scale: {x: 0.8695652, y: 0.8695652, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2948650080534790321
+      type: {class: AIGoalListNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c02ddbfa-2382-4a8b-a2a2-cb4b7a856820
+        computeOrder: 14
+        position:
+          serializedVersion: 2
+          x: 715
+          y: 47
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 2948650080534790338
+      type: {class: AIBehaviorPolicy, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Renameble
+        GUID: ff384626-4ad8-4768-a4b5-74f72fe66b35
+        computeOrder: 15
+        position:
+          serializedVersion: 2
+          x: 879
+          y: 334
+          width: 100
+          height: 100
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        policyType: 3
+        input: 
+        output: 
+    - rid: 5743150904995479759
+      type: {class: GameObjectParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 5ba0eaaf-0fff-45a0-88cd-c5e898db3d31
+        name: New Game Object
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 5743150904995479760
+        val: {fileID: 0}
+    - rid: 5743150904995479760
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 5ba0eaaf-0fff-45a0-88cd-c5e898db3d31
+    - rid: 5743150904995479765
+      type: {class: RectIntParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 0e8b2911-f97d-4f43-a4c5-32f7910968e0
+        name: New Rect Int
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 5743150904995479766
+        val:
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+    - rid: 5743150904995479766
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 0e8b2911-f97d-4f43-a4c5-32f7910968e0
+    - rid: 5743150995966525509
+      type: {class: AIRootNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Brain
+        GUID: c4986e2f-705a-401f-b694-465e6b384fe1
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 527
+          y: 256
+          width: 214
+          height: 224
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 
+        output: Hello, This is Ai Logic For xxx.
+    - rid: 5743150995966525538
+      type: {class: AIBehaviorPolicy, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: AIPolicy
+        GUID: a0c473ae-0185-4e3e-a9ee-5c85926a96e2
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 753
+          y: 161
+          width: 191
+          height: 95
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        policyType: 2
+        input: 
+        output: 
+    - rid: 5743150995966525559
+      type: {class: AIGoalListNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Goals
+        GUID: b66d8157-3057-4c44-a18d-5276789f8ca4
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 476
+          y: 199
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 5743150995966525564
+      type: {class: AISensorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Chat
+        GUID: 6ad2562c-27d9-4743-97db-937dac0a1f40
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 329
+          y: -34.559998
+          width: 105
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        SensorType: 0
+        Prority: 0
+        CalGoalInterval: 0
+        GoalTimeOut: 0
+    - rid: 5743150995966525565
+      type: {class: AISensorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Skill
+        GUID: 6bdcc95a-aa8e-4c50-99c2-df6df3eff8f8
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 210
+          y: -20.080002
+          width: 105
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        SensorType: 0
+        Prority: 0
+        CalGoalInterval: 0
+        GoalTimeOut: 0
+    - rid: 5743150995966525566
+      type: {class: AISensorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: f0eb965c-ea71-4ebf-b042-ba20368c5229
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 175
+          y: 96
+          width: 105
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        SensorType: 0
+        Prority: 0
+        CalGoalInterval: 0
+        GoalTimeOut: 0
+    - rid: 5743150995966525567
+      type: {class: AISensorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Combat
+        GUID: 89b2a155-7ef2-4d54-9ebe-750dbfbe1d4f
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 175
+          y: 96
+          width: 105
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        SensorType: 0
+        Prority: 0
+        CalGoalInterval: 0
+        GoalTimeOut: 0
+    - rid: 5743150995966525588
+      type: {class: AIBehaviorList, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: BehaviorList
+        GUID: 057a5474-b5cc-4582-9b39-483022c9adcb
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 991
+          y: 123.5
+          width: 127
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 5743150995966525597
+      type: {class: AIBehaviorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Skill
+        GUID: 85692e4a-e201-4685-93be-c2a8c6b5c7b7
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 1160
+          y: -20
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 5743150995966525598
+      type: {class: AIBehaviorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Skill
+        GUID: 11493647-bc4f-458a-88b9-7417414cbdbc
+        computeOrder: 9
+        position:
+          serializedVersion: 2
+          x: 1170
+          y: 86
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 5743150995966525599
+      type: {class: AIBehaviorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Skill
+        GUID: 981a0511-40e5-435b-a1c3-b47af55676c1
+        computeOrder: 10
+        position:
+          serializedVersion: 2
+          x: 1170
+          y: 86
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 5743150995966525600
+      type: {class: AIBehaviorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Skill
+        GUID: 2b5f5eee-c144-4c04-82d4-d50f51fb10c0
+        computeOrder: 11
+        position:
+          serializedVersion: 2
+          x: 1170
+          y: 86
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 5743150995966525601
+      type: {class: AIBehaviorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Patrol
+        GUID: da789c55-a818-4fc9-a830-6744b14502e3
+        computeOrder: 12
+        position:
+          serializedVersion: 2
+          x: 1170
+          y: 86
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 5743150995966525602
+      type: {class: AIBehaviorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: Chat
+        GUID: 8bdaab37-d4b5-409b-8b08-90d74e4926c1
+        computeOrder: 13
+        position:
+          serializedVersion: 2
+          x: 1181
+          y: 219
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 
+        input: 
+    - rid: 7599884921353011236
+      type: {class: AISensorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 03a26d74-620c-43c6-aec5-2685055991c9
+        computeOrder: 16
+        position:
+          serializedVersion: 2
+          x: 1091.9999
+          y: 394.47827
+          width: 191
+          height: 152
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        SensorType: 0
+        Prority: 0
+        CalGoalInterval: 0
+        GoalTimeOut: 0

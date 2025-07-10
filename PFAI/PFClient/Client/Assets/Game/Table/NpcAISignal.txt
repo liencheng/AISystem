@@ -1,0 +1,5 @@
+Id	Desc	Name	Type	ConditionList	BehaviorList	Prority
+INT	STRING	STRING	INT	STRING	STRING	INT
+#MAX_ID=1000;MAX_RECORD=1000;TableType=Hash;						
+#程序不读 Id（对应bt表的info列）	条件描述（程序不读）	目标名称	"Goal类型：1=Chat,2=Combat,3=Escape,..."	条件列表，支持"或"和"与"的操作	影响的行为	优先级，数值越大，优先级越高，如果AIPolicy也配置了Goal的目标，则优先使用AIPolicy表中的优先级。
+1	聊天目标	聊天	1	1	1	1

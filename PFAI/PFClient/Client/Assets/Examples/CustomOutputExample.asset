@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
+  m_Name: CustomOutputExample
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 7599884921353011387
+  - rid: 7599884921353011388
+  edges: []
+  groups: []
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 89
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 304
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ProcessorView, com.alelievr.NodeGraphProcessor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - position:
+      serializedVersion: 2
+      x: 8
+      y: 69
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 434
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ProcessorView, com.alelievr.NodeGraphProcessor.Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - rid: 7599884921353011357
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 296, y: -200, z: 0}
+  scale: {x: 1.520875, y: 1.520875, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7599884921353011357
+      type: {class: IntParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 4356d07b-06ea-47c0-8db1-db7fcbbd7c19
+        name: New Int
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 7599884921353011358
+        val: 0
+    - rid: 7599884921353011358
+      type: {class: IntParameter/IntSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 4356d07b-06ea-47c0-8db1-db7fcbbd7c19
+        mode: 0
+        min: 0
+        max: 10
+    - rid: 7599884921353011387
+      type: {class: PrintNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 11637d9d-04b4-4539-bdb7-c61e9a5b8e0f
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 427.05753
+          y: 285
+          width: 69
+          height: 89
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    - rid: 7599884921353011388
+      type: {class: GameObjectNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: b3aa1ade-ede3-4a1d-8161-3bca13d73ef3
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 40.39871
+          y: 249.93597
+          width: 242
+          height: 95
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: {fileID: 0}

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
+  m_Name: GraphProcessorEx 4
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 7599884921353011352
+  - rid: 7599884921353011354
+  edges:
+  - GUID: 70b734b0-f2d7-443c-9355-7d5945c3777e
+    owner: {fileID: 11400000}
+    inputNodeGUID: f1f1bff2-0b49-4344-abac-977439acec34
+    outputNodeGUID: 6cc74acc-e5ea-4b86-8ba5-9a482945c60c
+    inputFieldName: obj
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 0, y: 0, z: 0}
+  scale: {x: 1, y: 1, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7599884921353011352
+      type: {class: PrintNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: f1f1bff2-0b49-4344-abac-977439acec34
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 662
+          y: 167
+          width: 69
+          height: 89
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+    - rid: 7599884921353011354
+      type: {class: StringNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 6cc74acc-e5ea-4b86-8ba5-9a482945c60c
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 200
+          y: 133
+          width: 214
+          height: 224
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: sdfa

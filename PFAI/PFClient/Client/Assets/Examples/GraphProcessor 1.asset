@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
+  m_Name: GraphProcessor 1
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 5743150923773641716
+  - rid: 5743150923773641718
+  - rid: 5743150923773641719
+  - rid: 5743150923773641720
+  - rid: 5743150923773641721
+  - rid: 5743150923773641722
+  - rid: 5743150923773641723
+  - rid: 5743150923773641724
+  - rid: 5743150923773641725
+  edges:
+  - GUID: 00254117-0f13-4b7a-8830-a18465fb11d6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 1a31f936-179e-43f5-8f99-bdf950baf26a
+    outputNodeGUID: f30907ec-aabc-42b3-8787-437851a147a9
+    inputFieldName: input
+    outputFieldName: output1
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 147
+      width: 200
+      height: 272
+    title: Create Note
+    content: Description
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 143, y: 145, z: 0}
+  scale: {x: 0.8695652, y: 0.8695652, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5743150923773641716
+      type: {class: MessageNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 08d0911c-6a99-41ae-8fd4-91ac0cf547be
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 387
+          y: 272
+          width: 100
+          height: 100
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        input: 0
+        messageType: 1
+    - rid: 5743150923773641718
+      type: {class: StringNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c42cbf4c-30e7-46f1-8441-0b5c141814d3
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 599
+          y: 183
+          width: 214
+          height: 224
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        output: asdf
+    - rid: 5743150923773641719
+      type: {class: SettingsNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 1a31f936-179e-43f5-8f99-bdf950baf26a
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 422
+          y: 94
+          width: 156
+          height: 89
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        setting: 0
+        input: 0
+        output: 0
+    - rid: 5743150923773641720
+      type: {class: AbstractNodeChild1, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 2259acdd-c6ed-4b0c-9a2f-342355427e21
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 670
+          y: 183
+          width: 122
+          height: 89
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 5743150923773641721
+      type: {class: CircleRadians, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: f9d7ca56-029f-4c07-a938-d4b9559e33bb
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 907
+          y: 309.5
+          width: 120
+          height: 75
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        outputRadians: []
+    - rid: 5743150923773641722
+      type: {class: ListNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 7d4fc5f2-a6dd-452f-9737-a4955a1704ad
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 1064
+          y: 250
+          width: 331
+          height: 595
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        output: {x: 0, y: 0, z: 0, w: 0}
+        input: {x: 0, y: 0, z: 0, w: 0}
+        objs:
+        - {fileID: 0}
+        - {fileID: 0}
+        - {fileID: 0}
+    - rid: 5743150923773641723
+      type: {class: Inheritance2, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: f30907ec-aabc-42b3-8787-437851a147a9
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 139
+          y: 385
+          width: 159
+          height: 180
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+        fieldBase: 0
+        input1: 0
+        output1: 0
+        field1: 4.62
+        input2: 0
+        output2: 0
+        field2: 43
+    - rid: 5743150923773641724
+      type: {class: CustomPortsNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 2263ad08-062c-4f02-97af-04631be24dca
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 813
+          y: 490
+          width: 133
+          height: 75
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        inputs: []
+        outputs: []
+        portCount: 1
+    - rid: 5743150923773641725
+      type: {class: RenamableNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: "\u5929\u5730Boss"
+        GUID: daa339ed-0db7-4dc3-a1b6-131f0a6f0b46
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 387
+          y: 439
+          width: 102
+          height: 75
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0

@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31390c44c9f3a3d40b424bf6821999a2, type: 3}
+  m_Name: GraphProcessorEx 3
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 7599884921353011573
+  - rid: 7599884921353011665
+  - rid: 7599884921353011666
+  - rid: 7599884921353011671
+  - rid: 7599885011758612480
+  - rid: 7599885011758612482
+  edges:
+  - GUID: eb7fa4e4-a690-4197-b498-58afad8734e1
+    owner: {fileID: 11400000}
+    inputNodeGUID: 098a77b7-d87c-45b0-b360-0e4be8987bdf
+    outputNodeGUID: d20d5408-df8f-4663-bf7a-09773679fe50
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e39e370d-c266-408c-b032-8567946be89f
+    owner: {fileID: 11400000}
+    inputNodeGUID: 098a77b7-d87c-45b0-b360-0e4be8987bdf
+    outputNodeGUID: d20d5408-df8f-4663-bf7a-09773679fe50
+    inputFieldName: knowledge
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 186, y: 1274, z: 0}
+  scale: {x: 1.7490063, y: 1.7490063, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7599884921353011573
+      type: {class: AISensorNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: GoalSensor
+        GUID: 5e4f1311-d1c4-4fa2-b33b-ae72b30803bc
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: -296
+          y: -676
+          width: 191
+          height: 208
+        expanded: 1
+        debug: 1
+        nodeLock: 0
+        output: 0
+        input: 0
+        SensorType: 1
+        GoalSensorId: 0
+        GoalSensorName: DefaultGoalSensor
+        Prority: 3
+        CalGoalInterval: -16
+        GoalTimeOut: 29
+    - rid: 7599884921353011665
+      type: {class: AIRootNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: d20d5408-df8f-4663-bf7a-09773679fe50
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: -250.15005
+          y: -213
+          width: 192
+          height: 141
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+        NpcName: DefaultAI
+        PolicyId: 0
+    - rid: 7599884921353011666
+      type: {class: AIBehaviorPolicy, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 098a77b7-d87c-45b0-b360-0e4be8987bdf
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: -9.649994
+          y: -675.5942
+          width: 200
+          height: 119
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        policyType: 1
+        input: 0
+        knowledge: 0
+        behavior: 0
+        PolicyId: 2
+    - rid: 7599884921353011671
+      type: {class: AIConditionNodeBase, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: d97fd7fd-08be-4dff-b415-27380c218a74
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 502
+          y: -724
+          width: 321
+          height: 256
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        ConditionId: 0
+        ConditionName: DefaultCondition
+        ConditionDescription: DefaultConditionDescription
+    - rid: 7599885011758612480
+      type: {class: AIConditionHPNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 621314d5-6797-4fd2-b743-5e2261eb22cd
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 145
+          y: -566
+          width: 321
+          height: 295
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        ConditionId: 0
+        ConditionName: DefaultCondition
+        ConditionDescription: DefaultConditionDescription
+        conditionType: 2
+        HP: 0
+    - rid: 7599885011758612482
+      type: {class: AIBehaviorSkillNode, ns: , asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 333d58f7-ee3a-45dc-8bb6-80375c66f796
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 234.99998
+          y: -770.5
+          width: 231
+          height: 189
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        output: 0
+        input: 0
+        BehaviorId: 0
+        BehaviorName: DefaultBehavior
+        BehaviorPriority: 0
+        BehaviorCD: 0
+        BehaviorTimeOut: 0
+        SkillId: 2
