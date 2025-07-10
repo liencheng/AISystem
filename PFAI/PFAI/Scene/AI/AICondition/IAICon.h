@@ -10,10 +10,10 @@ class E_AIConType
 public:
     enum
     {
-		E_CON_None = 0, // ÎŞÌõ¼ş
-		E_CON_HP, // ½¡¿µÌõ¼ş
+		E_CON_None = 0, // æ— æ¡ä»¶
+		E_CON_HP, // å¥åº·æ¡ä»¶
 		E_CON_MP,
-		E_CON_COMBAT, // Õ½¶·×´Ì¬Ìõ¼ş
+		E_CON_COMBAT, // æˆ˜æ–—çŠ¶æ€æ¡ä»¶
 		E_CON_Distance,
     };
 };
@@ -30,6 +30,7 @@ public:
     virtual ~IAICon() = default; // Virtual destructor for proper cleanup
 	virtual DbgInfo FetchDbgInfo() const override
 	{
+		return DbgInfo();
 	}
     
     int32_t GetId() const { return m_CfgId; } // Get the ID of the condition

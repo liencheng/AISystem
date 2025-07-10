@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plist>
+  <!--Inner descript ${N} =\n ${L} =< ${R} = '>' ${C} =>'&'-->
+
+  <descript>//Auto Created by Robot, Don't try to Modify</descript>
+
+  <import>
+    using System;${N}
+    using System.Collections.Generic;${N}
+    using UnityEngine;${N}
+    using System.IO;${N}
+  </import>
+
+  <namespace>namespace  Games.Table{ </namespace>
+  <classhead>
+    public  struct Tab_${CodeName} : ITable ${N}{${N}  
+    private const string TAB_NAME = "${CodeName}";${N} 
+	private int _row;${N} 
+	private static TableSheet _gSheet_${CodeName} = null;${N} 
+	private Tab_${CodeName}(int row)${N}
+    {${N}
+        _row = row;${N}
+    }${N} 
+	public static void Clean() => _gSheet_${CodeName} = null;${N}
+	public static Tab_${CodeName} NullData = new Tab_${CodeName}(TableManager.NullRowIndex);${N}
+	public bool IsNull() => _row == TableManager.NullRowIndex; ${N}
+	public bool IsNotNull() => _row != TableManager.NullRowIndex; ${N}
+	public bool IsEqual(Tab_${CodeName} other) => _row == other._row; ${N}
+  </classhead>
+
+  <!--This below is Body-->
+  <first>
+    public   ${type} ${Variable} =${R} (${type})(_gSheet_${CodeName}?.GetKey(_row)?? ${defaultvalue}); ${N}
+  </first> 
+  <single>
+    public   ${type} ${Variable} =${R} _gSheet_${CodeName}?.Get${Type}(_row, ${FieldIndex})?? ${defaultvalue}; ${N}
+  </single>
+  <repeat>
+    public 	 int get${Variable}Count() { return ${COUNT}; } ${N} 
+    public   ${type} Get${Variable}byIndex(int idx)
+    {${N}
+    if(idx${R}=0 ${C}${C} idx${L}${COUNT}) return _gSheet_${CodeName}?.Get${Type}(_row, ${ArrayIndex}+idx)?? ${defaultvalue}; ${N}
+    return ${defaultvalue};${N}
+    }${N}
+  </repeat>
+
+
+  <inittable>
+    public static void LoadTable(ref Dictionary${L}int, Tab_${CodeName}${R} table, bool bCreate = false, byte[] bytes = null)${N}
+    {${N}
+        #if USE_TABLE_AB || !UNITY_EDITOR${N} 
+			TextAsset asset = AssetManager.LoadTableAssetSync($"Tab_{TAB_NAME}_Data","${FileName}",out var isByteAsset);${N}
+			if(isByteAsset)${N}
+			{${N}
+			   if(asset == null || !TableHelper.DeSerializeTable(asset.bytes,ref table,ref _gSheet_${CodeName}))${N}
+			   {${N}
+				   Debug.LogError($"LoadTable Error => {TAB_NAME} {(asset == null || asset.bytes == null  ? "asset is Null " : "DeSerializeTable Failed")}");${N}
+				   asset = null;${N}	
+				   table = new Dictionary${L}int, Tab_${CodeName}${R}{};${N}
+				   return;${N}
+			   }${N}  
+			}${N}
+			else${N}
+			{${N}
+			   if(asset == null || !TableHelper.DeSerializeTable(asset.text,ref table,ref _gSheet_${CodeName}))${N}
+			   {${N}
+				   Debug.LogError($"LoadTable Error => {TAB_NAME} {(asset == null || asset.text == null  ? "asset is Null " : "DeSerializeTable Failed")}");${N}
+				   asset = null;${N}	
+				   table = new Dictionary${L}int, Tab_${CodeName}${R}{};${N}
+				   return;${N}
+			   }${N}
+			}${N} 
+			asset = null;${N}
+        #else${N}
+			if (bytes != null ${C}${C} TableHelper.DeSerializeTable(bytes, ref table, ref _gSheet_${CodeName}))${N}
+			{${N}  
+			  return;${N}
+			}${N}
+            TextAsset asset = UnityEditor.AssetDatabase.LoadAssetAtPath${L}TextAsset${R}("Assets/Game/Table/${FileName}");${N}
+            if(asset == null || !TableHelper.DeSerializeTable(asset.text,ref table,ref _gSheet_${CodeName}))${N}
+			{${N} 
+			   Debug.LogError($"LoadTable Error => ${FileName} {(asset == null || asset.text == null  ? "asset is Null" : "DeSerializeTable Failed")} ");${N}
+			   asset = null;${N}
+			   return;${N}
+			}${N}
+			asset = null;${N}
+        #endif${N}  
+        if (bCreate)${N}
+        {${N}
+            TableHelper.SerializeTable(TAB_NAME,ref _gSheet_${CodeName});${N}
+        }${N} 
+    }${N} 
+	${N} 
+    public override int GetHashCode()${N}
+    {${N}
+        return _row;${N}
+    }${N}
+	${N} 
+    public void SetRow(int index)${N}
+    {${N} 
+        _row = index;${N}
+    }${N} 	 
+  </inittable>
+
+  <tail>${N}}${N}}${N}</tail>
+</plist>

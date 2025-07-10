@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalyzeInfo SQLName="copyscenedropresult">
+  <Params>
+    <Param Id="Id" Type="System.Int32" Default="0"/>
+    <Param Id="LvMin" Type="System.Int32" Default="0"/>
+    <Param Id="LvMax" Type="System.Int32" Default="20"/>
+  </Params>
+  <Require Name="CopySceneDrop"/>
+  <Require Name="DropList"/>
+  <Require Name="RecursionDrop"/>
+  <Require Name="CommonItem"/>
+</AnalyzeInfo>

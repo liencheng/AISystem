@@ -86,7 +86,13 @@
     <ClCompile Include="Scene\AI\AICondition\AIConFactory.cpp">
       <Filter>Scene\AI\AICondition</Filter>
     </ClCompile>
-    <ClCompile Include="Public\Utils\GenId.cpp" />
+    <ClCompile Include="Public\Utils\GenId.cpp">
+      <Filter>Public\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="Bridge\IBridge.cpp">
+      <Filter>Bridge</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\DataDefine.h">
@@ -254,13 +260,16 @@
     <ClInclude Include="Scene\AI\AIBehavior\BehaviorFactory.h">
       <Filter>Scene\AI\AIBehavior</Filter>
     </ClInclude>
-    <ClInclude Include="Public\Utils\GenId.h" />
     <ClInclude Include="Scene\AI\AISignal\AISignal.h">
       <Filter>Scene\AI\AISignal</Filter>
     </ClInclude>
     <ClInclude Include="Scene\AI\AISignal\AISignalDispacher.h">
       <Filter>Scene\AI\AISignal</Filter>
     </ClInclude>
+    <ClInclude Include="Public\Utils\GenId.h">
+      <Filter>Public\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Public">

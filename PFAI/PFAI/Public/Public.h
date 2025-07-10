@@ -4,7 +4,6 @@
 #include "Solar/sol_table_file.h"
 #include "Utils/Logger.h"
 
-
 #include "Table/Table_NpcAIBehavior.h"
 #include "Table/Table_NpcAICondition.h"
 #include "Table/Table_NpcAIGoalSensor.h"

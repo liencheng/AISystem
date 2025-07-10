@@ -1,6 +1,7 @@
 #include "IBehavior.h"
 #include "Utils/Utils.h"
 #include "../AICondition/AIConFactory.h"
+#include "../AIKnowledge/AIKnowledge.h"
 
 
 IBehavior::~IBehavior()
@@ -104,3 +105,13 @@ int32_t IBehavior::GetWeightOfSignal() const
 }
 
 
+/*
+    bool IBehavior:: IsInCD() const 
+    { 
+        return ((m_LastExecuteTime > 0) && 
+            (TimeHelper::getCurrentTimestamp() - m_LastExecuteTime > m_fCDs)); 
+    } 
+*/
+    bool IBehavior:: TimeOut()const { 
+        return m_nTimeout >0 && (TimeHelper::getCurrentTimestamp() * 1000 - m_nStartTime > m_nTimeout);
+    }

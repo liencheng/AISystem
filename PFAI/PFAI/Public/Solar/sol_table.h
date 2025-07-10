@@ -11,9 +11,9 @@ namespace solar
 			table_uniqueid() {}
 			T* get_record_by_id(int id)
 			{
-				for (auto& record : m_records) {
-					if (record.GetId() == id) {
-						return &record;
+				for (auto record : m_records) {
+					if (record->GetId() == id) {
+						return record;
 					}
 				}
 				return nullptr;
@@ -23,7 +23,7 @@ namespace solar
 				if (index < 0 || index >= m_record_count) {
 					return nullptr;
 				}
-				return &m_records[index];
+				return m_records[index];
 			}
 			int get_record_count()
 			{
@@ -39,12 +39,12 @@ namespace solar
 				for (int i = 0; i < m_record_count; ++i) {
 					T* record = new T();
 					record->load(tf, i);
-					m_records.push_back(*record);
+					m_records.push_back(record);
 				}
 			}
 
 		private:
-			std::vector<T> m_records;
+			std::vector<T*> m_records;
 			int m_record_count;
 	};
 }

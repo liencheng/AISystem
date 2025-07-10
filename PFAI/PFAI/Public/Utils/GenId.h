@@ -16,7 +16,7 @@ class GenId
 public:
 	GenId()
 	{
-		id = T * ID_FACTOR + 0;
+		id = static_cast<int32_t>(T) * ID_FACTOR + 0;
 	}
 	// Generate a new unique ID
 	int32_t generate() {

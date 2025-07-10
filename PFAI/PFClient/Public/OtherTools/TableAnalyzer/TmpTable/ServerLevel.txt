@@ -1,0 +1,12 @@
+Id	Desc	MaxLevel	EndDay	EndHour	EndDayA	EndHourA	NeedMissionId
+INT	STRING	INT	INT	INT	INT	INT	INT
+#MAX_ID=50;MAX_RECORD=50;					N	N	
+#ID	程序不读	等级上限	结束天（已废弃，为了防止意外和2配置成一样）	结束小时（已废弃，为了防止意外和2配置成一样）	结束天	结束小时	要求完成任务ID
+1	阶段1	59	4	4	4	4	-1
+2	阶段2	79	15	4	15	4	1993
+3	阶段3	99	51	4	51	4	1994
+4	阶段4	119	-1	-1	117	4	-1
+5	阶段5	179	176	4	146	4	-1
+6	阶段6	199	211	4	174	4	-1
+7	阶段7	219	283	4	230	4	-1
+#8	阶段8	239	-1	-1	-1	-1	-1

@@ -1,0 +1,13 @@
+Id	Desc	DayIndex1	DayIndex2	DayIndex3	DayIndex4	DayIndex5	DayIndex6	DayIndex7	DayIndex8	DayIndex9	DayIndex10	DayIndex11	DayIndex12	DayIndex13	DayIndex14	HeadAltas	HeadIcon	ByePaoPaoId	ByeActionId
+INT	STRING	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	STRING	STRING	INT	INT
+#MAX_ID=99999;MAX_RECORD=10;TableType=Hash;																			
+#ID，NPC的ID	程序不读	第一天行为索引，索引NpcBehaviorTime.txt的Id	第二天行为索引，索引NpcBehaviorTime.txt的Id	第三天行为索引，索引NpcBehaviorTime.txt的Id	第四天行为索引，索引NpcBehaviorTime.txt的Id	第五天行为索引，索引NpcBehaviorTime.txt的Id	第六天行为索引，索引NpcBehaviorTime.txt的Id	第七天行为索引，索引NpcBehaviorTime.txt的Id	第八天行为索引，索引NpcBehaviorTime.txt的Id	第九天行为索引，索引NpcBehaviorTime.txt的Id	第十天行为索引，索引NpcBehaviorTime.txt的Id	第十一天行为索引，索引NpcBehaviorTime.txt的Id	第十二天行为索引，索引NpcBehaviorTime.txt的Id	第十三天行为索引，索引NpcBehaviorTime.txt的Id	第十四天行为索引，索引NpcBehaviorTime.txt的Id	头像图标所在Atlas	头像图标	消失前的泡泡Id，没有配-1	消失前播放的动作Id，没有配-1
+6445	刘雨昕	1	10	19	28	37	46	55	1	10	19	28	37	46	55	Icon	yinbi	27942	880
+6446	虞书欣	2	11	20	29	38	47	56	2	11	20	29	38	47	56	Icon	yinbi	27942	880
+6447	许佳琪	3	12	21	30	39	48	57	3	12	21	30	39	48	57	Icon	yinbi	27942	880
+6448	喻言	4	13	22	31	40	49	58	4	13	22	31	40	49	58	Icon	yinbi	27942	880
+6449	谢可寅	5	14	23	32	41	50	59	5	14	23	32	41	50	59	Icon	yinbi	27942	880
+6450	安崎	6	15	24	33	42	51	60	6	15	24	33	42	51	60	Icon	yinbi	27942	880
+6451	赵小棠	7	16	25	34	43	52	61	7	16	25	34	43	52	61	Icon	yinbi	27942	880
+6452	孔雪儿	8	17	26	35	44	53	62	8	17	26	35	44	53	62	Icon	yinbi	27942	880
+6453	陆柯燃	9	18	27	36	45	54	63	9	18	27	36	45	54	63	Icon	yinbi	27942	880

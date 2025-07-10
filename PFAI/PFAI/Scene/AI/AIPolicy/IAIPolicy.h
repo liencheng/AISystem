@@ -6,6 +6,7 @@
 #include "../GameDfine_AI/AIDefine.h"
 #include "../../Obj/Obj_Char.h"
 
+class IBehavior; // Forward declaration of IBehavior class
 /*
  *IPolicy, AI策略接口
  *
@@ -15,12 +16,13 @@
 class IAIPolicy
 {
 public:
-	IAIPolicy(Obj_Char* pOwner) :m_pOwner(pOwner), m_pAIKnowledge(pOwner) 
+	IAIPolicy(Obj_Char* pOwner):m_pOwner(pOwner) 
 	{
+		m_AIKnowledge = AIKnowledge(pOwner);
 		Init();
 	};
 protected:
-	AIKnowledge m_pAIKnowledge;
+	AIKnowledge m_AIKnowledge;
 	std::vector<IBehavior*> m_vecBehavior;
 	std::vector<IDbgNess* > m_vecDbgNodes; // 调试节点
 	IBehavior* m_pCurrentBehavior = nullptr;
@@ -42,7 +44,6 @@ public:
  void                UpdateDbg();
  
  void        InitBehaviorFromCfg();
- void        InitGoalSensorFromCfg();
  bool        AddBehavior(IBehavior* pBehavior);
  bool        DelBehavior(IBehavior* pBehavior);
 
@@ -50,7 +51,7 @@ public:
  void        ClearBehaviorDirty() { m_bBehaviorDirty = false; }
  bool        IsBehaviorDirty() const { return m_bBehaviorDirty; }
  
- AIKnowledge&        GetAIKnowledge()const { return const_cast<AIKnowledge&>(m_pAIKnowledge); }        
+ const AIKnowledge& GetAIKnowledge()const { return m_AIKnowledge; }
  IDbgNess*           GetDbgNode(int32_t id) const;
  const Obj_Char* GetOwner() const { return m_pOwner; }
 

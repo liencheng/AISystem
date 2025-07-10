@@ -1,0 +1,6 @@
+<ILHotFixTableConfig>
+<HotFixEnable  desc="生成到热更程序集开关">1</HotFixEnable> 
+<ILHotFixAssembly  desc="热更程序集配置">ILHotFixAssemblyTable.ini</ILHotFixAssembly>
+<ExcludeHotFix desc="不进热更程序集(回车分割)">
+</ExcludeHotFix> 
+</ILHotFixTableConfig>

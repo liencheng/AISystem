@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalyzeInfo SQLName="EquipAttrGrow">
+  <Params>
+	  <Param Id="LvMinLow" Type="System.Int32" Default="480"/>
+	  <Param Id="LvMinHigh" Type="System.Int32" Default="489"/>
+	  <Param Id="LvMaxLow" Type="System.Int32" Default="490"/>
+	  <Param Id="LvMaxHigh" Type="System.Int32" Default="509"/>
+	  <Param Id="DiffFilter" Type="System.Int32" Default="3"/>
+  </Params>
+  <Require Name="EquipAttr"/>
+  <Require Name="CommonItem"/>
+  <Require Name="Preset_AttrGrow"/>
+</AnalyzeInfo>

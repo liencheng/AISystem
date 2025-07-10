@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+from tasks.actions import net_packets
+from tasks.actions import Functions
+
+
+class ActionCG_EQUIP_RECOIN:
+    def __init__(self, person):
+        self.person = person
+
+    def run(self):
+        packet = net_packets.PACKETS.CG_EQUIP_RECOIN(self.person)
+        # params begin ( don't move this line )
+
+        packet['packtype'] = self.person['packtype']
+        packet['equipguid'] = self.person['equipguid']
+        # params end ( don't move this line)
+        res = Functions.send_packet(packet)
+        # Functions.wait_for_packet(self.person, "CG_EQUIP_RECOIN")
+        return res

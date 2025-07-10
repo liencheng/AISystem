@@ -1,0 +1,38 @@
+PACKET_NAME=\
+"""
+#don't_modify_directly
+PACKET_SIZE
+"""
+#line1
+#line1
+#line1
+PACKET_LIST = PACKET_NAME.strip().splitlines()
+PACKET_DIC = {}
+ID_DIC = {}
+_id_index = 0
+_id = 0
+for p in PACKET_LIST:
+    if PACKET_LIST[_id_index].find(',') > 0:
+        PACKET_LIST[_id_index] = PACKET_LIST[_id_index][:PACKET_LIST[_id_index].find(',')].strip()
+    else:
+        PACKET_LIST[_id_index] = PACKET_LIST[_id_index].strip()
+    if PACKET_LIST[_id_index].find('=') > 0:
+        _id = int(PACKET_LIST[_id_index][PACKET_LIST[_id_index].find('=')+1:].strip())
+        PACKET_LIST[_id_index] = PACKET_LIST[_id_index][:PACKET_LIST[_id_index].find('=')].strip()
+    ID_DIC[PACKET_LIST[_id_index]] = _id
+    PACKET_DIC[_id] = PACKET_LIST[_id_index]
+    _id_index += 1
+    _id += 1
+#line1
+def PACKET_DEFINE(idnumber):
+    if idnumber in PACKET_DIC.keys():
+        return PACKET_DIC[idnumber]
+    else:
+        return None
+#line1
+def ID_DEFINE(packetname):
+    return ID_DIC[packetname]
+#line1
+def MAX_ID():
+    return ID_DIC['LABLE_MAX_PACKET_ID']
+#line1

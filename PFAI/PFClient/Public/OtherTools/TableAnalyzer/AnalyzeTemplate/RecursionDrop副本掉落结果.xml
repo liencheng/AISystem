@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalyzeInfo SQLName="recursioncopydropresult">
+  <Params>
+    <Param Id="Id" Type="System.Int32" Default="0"/>
+  </Params>
+  <Require Name="RecursionDrop"/>
+  <Require Name="DropNotify"/>
+  <Require Name="CommonItem"/>
+  <Require Name="DropLuckyValue"/>
+  <Require Name="StrDictionary"/>
+</AnalyzeInfo>

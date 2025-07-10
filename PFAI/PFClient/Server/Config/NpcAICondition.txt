@@ -1,0 +1,7 @@
+Id	Desc	Name	Type	Param_0	Param_1	Param_2	Param_3	Param_4	Param_5	Param_6	Param_7
+INT	STRING	STRING	INT	INT	INT	INT	INT	INT	INT	INT	INT
+#MAX_ID=1000;MAX_RECORD=1000;TableType=Hash;											
+#程序不读 Id（对应bt表的info列）	条件描述（程序不读）	条件名字	条件类型(1-血量到达百分之X;2-离开X阶段Y毫秒;3-进入X阶段Y毫秒;4-boss释放X技能Y次;5-boss身上某种buff达到n层;6-某类怪物死亡了n个;7-战斗时间达到了x秒;8-战斗阶段转入x阶段未实现;9-血量到达百分之X仅可能触发一次;10-Npc本身死亡; 11-玩家死亡;101-脚本检查条件未实现)	参数	参数	参数	参数	参数	参数	参数	参数
+1	boss血量90条件	boss血量90条件	1	90	-1	-1	-1	-1	-1	-1	-1
+2	boss血量80条件	boss血量80条件	1	80	-1	-1	-1	-1	-1	-1	-1
+3	boss血量70条件	boss血量70条件	1	70	-1	-1	-1	-1	-1	-1	-1

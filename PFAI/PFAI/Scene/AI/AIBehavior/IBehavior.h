@@ -6,9 +6,12 @@
 #include "../GameDfine_AI/AIDefine.h"
 #include "../AICondition/IAICon.h"
 #include "../../Obj/Obj_Char.h"
+#include "../AISignal/AISignal.h"
+#include "../AIGoalSensor/IGoal.h"
 #include "Utils/GenId.h"
-#include <Utils/Time.h>
+#include "Utils/Time.h"
 
+class AIKnowledge; // Forward declaration of AIKnowledge class
 
 //todo: 可以考虑把Condtion从行为类中剥离出来， 用于多个行为类公用，以提供性能
 class IBehavior
@@ -61,23 +64,22 @@ public:
     int32_t GetWeightOfGoal() const; // Get the weight of a goal based on knowledge
     int32_t GetFinalWeight() const; // Get the final weight of the behavior based on priority, signal, and goal weights
 
-    bool IsInCD() const { 
+    bool IsInCD() const
+    {
         return ((m_LastExecuteTime > 0) && 
-            (TimeHelper::getCurrentTimestamp() - m_LastExecuteTime > m_fCDs)); 
-    } 
-    bool TimeOut()const { 
-        return m_nTimeout >0 && (TimeHelper::getCurrentTimestamp() * 1000 - m_nStartTime > m_nTimeout);
+            (TimeHelper::getCurrentTimestamp() - m_LastExecuteTime < m_fCDs)); 
     }
+    bool TimeOut()const;
 
 
 public:
     virtual  bool IsSatisfyCondition(const AIKnowledge* pknowledge); // Check if the conditions are satisfied
-    virtual  void OnUpdate()
+    virtual  void OnUpdate(){}
+    virtual  void OnStart() { m_nStartTime = TimeHelper::getCurrentTimestamp(); };
+    virtual  void OnEnd(E_AIBehaviorStatus result) 
     {
-        m_LastExecuteTime = 0;
-    }
-    virtual  void OnStart() { m_nStartTime = TimeHelper::getCurrentTimestamp() * 1000; };
-    virtual  void OnEnd(E_AIBehaviorStatus result) {};
+        m_LastExecuteTime = TimeHelper::getCurrentTimestamp();
+    };
     virtual  bool CanInterrupt() { return false; };
     virtual  bool Interrupt() { return false; };
 };

@@ -10,7 +10,7 @@
 
 
 
-// ¶¯Ì¬¶ÏÑÔº¯Êı£¨Å×³öÒì³££©
+// åŠ¨æ€æ–­è¨€å‡½æ•°ï¼ˆæŠ›å‡ºå¼‚å¸¸ï¼‰
 inline void dynamicAssert(bool condition, const char* exprStr, const char* msg, const char* file, int line) {
     if (!condition) {
         std::string error = "Assertion failed: (";
@@ -25,7 +25,7 @@ inline void dynamicAssert(bool condition, const char* exprStr, const char* msg, 
     }
 }
 
-// °²È«µÄ¶ÏÑÔºê
+// å®‰å…¨çš„æ–­è¨€å®
 #define SOL_ASSERT(expr, msg) \
     do { \
         dynamicAssert((expr), #expr, msg, __FILE__, __LINE__); \

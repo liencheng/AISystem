@@ -19,7 +19,20 @@ void AIBossPolicy::Update(float fDeltaTime)
             m_pCurrentBehavior->OnUpdate();
         }
         //更新操作
-        Decision();
+        IBehavior * newDecision = SelectBestBehavior();
+		if (newDecision != nullptr)
+		{
+			//如果当前行为和新决策行为不同，则执行新决策行为
+			if (newDecision != m_pCurrentBehavior)
+			{
+				if (m_pCurrentBehavior != nullptr)
+				{
+					m_pCurrentBehavior->Interrupt();
+				}
+				m_pCurrentBehavior = newDecision;
+				m_pCurrentBehavior->OnStart();
+			}
+		}
     }while (false);
 }
 
@@ -86,7 +99,7 @@ IBehavior * AIBossPolicy::SelectBestBehavior() const
             continue;
         }
         // 检查行为是否满足条件
-        if (!behavior->IsSatisfyCondition(m_pAIKnowledge))
+        if (!behavior->IsSatisfyCondition(&m_AIKnowledge))
         {
             continue;
         }

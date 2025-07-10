@@ -45,6 +45,7 @@ void AIBPatrol::OnEnd(E_AIBehaviorStatus result)
 bool AIBPatrol::Interrupt()
 {
     OnEnd(E_AIBehaviorStatus::ABS_End);
+    return true;
 }
 
 void AIBPatrol::SearchEnemy()

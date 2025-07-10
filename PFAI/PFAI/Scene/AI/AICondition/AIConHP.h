@@ -34,28 +34,7 @@ public:
     }
     ~AIConHP() = default;
 public:  
-    virtual bool IsSatisfy(Obj_Char* pOwner) override
-    {
-        MAYBE_DEBUG;
-        
-        switch (m_eOp)
-        {
-            case E_AI_ConHP_OP::Greater:
-                return pOwner->GetHP() > m_nHP;
-            case E_AI_ConHP_OP::Less:
-                return pOwner->GetHP() < m_nHP;
-            case E_AI_ConHP_OP::Equal:
-                return pOwner->GetHP() == m_nHP;
-            case E_AI_ConHP_OP::GreaterEqual:
-                return pOwner->GetHP() >= m_nHP;
-            case E_AI_ConHP_OP::LessEqual:
-                return pOwner->GetHP() <= m_nHP;
-            case E_AI_ConHP_OP::NotEqual:
-                return pOwner->GetHP() != m_nHP;
-            case E_AI_ConHP_OP::None:
-                return false;
-        }
-    }
+    virtual bool IsSatisfy(Obj_Char* pOwner) override;
     int64_t m_nHP = 0; // Health points
     E_AI_ConHP_OP m_eOp = E_AI_ConHP_OP::None; // Operation type
     

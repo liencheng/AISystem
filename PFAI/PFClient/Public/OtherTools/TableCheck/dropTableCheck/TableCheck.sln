@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableCheck", "TableCheck.csproj", "{14F472EF-40EA-417E-A189-6BE8034A2F53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14F472EF-40EA-417E-A189-6BE8034A2F53}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{14F472EF-40EA-417E-A189-6BE8034A2F53}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{14F472EF-40EA-417E-A189-6BE8034A2F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F472EF-40EA-417E-A189-6BE8034A2F53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F239129-8989-4B2E-8C27-D1BDFF0AA974}
+	EndGlobalSection
+EndGlobal

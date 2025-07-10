@@ -74,6 +74,7 @@ namespace solar {
 		using table_line = std::vector<std::string>;
 
 	public:
+		table_file() : m_file_path(""), m_table_lines(), m_table_filed_vec() {}
 		explicit table_file(const std::string& file, bool multiplyid = false)
 		{
 		}

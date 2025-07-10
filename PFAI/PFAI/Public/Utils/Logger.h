@@ -48,6 +48,7 @@ namespace utils {
             }
 
             logFile_ << getCurrentTime() << " [" << logLevelToString(level) << "] " << message << std::endl;
+			fmt::print("{} [{}] {}\n", getCurrentTime(), logLevelToString(level), message);
         }
 
     private:

@@ -2258,6 +2258,8 @@ template <typename Context> class value {
   FMT_CONSTEXPR value(const T&, custom_tag) {
     // Cannot format an argument; to make type T formattable provide a
     // formatter<T> specialization: https://fmt.dev/latest/api.html#udt.
+    //如果这里报错，可以把下面的assert打开执行判断
+    //FMT_ASSERT(false, "HelloTodo");
     type_is_unformattable_for<T, char_type> _;
   }
 

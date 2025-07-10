@@ -3,6 +3,14 @@
 #include "Utils/Utils.h"
 #include "../AIGoalSensor/IGoal.h"
 
+AIKnowledge::AIKnowledge(Obj_Char *pChar)
+{
+	m_pOwner = pChar;
+	m_pScene = m_pOwner->GetScene();
+	m_bDirty = false; // Initialize dirty flag
+	InitGoals(); // Initialize goals 
+
+}
 
 void AIKnowledge::InitGoals()
 {
@@ -115,7 +123,7 @@ void AIKnowledge::UpdateGoals()
     // Iterate through the goals and update them
     for (auto& goal : m_vecGoals)
     {
-        goal->OnUpdate(this);
+        goal.OnUpdate(this);
     }
 }
 

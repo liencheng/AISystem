@@ -1,0 +1,5 @@
+Id	Desc	PolicyId
+INT	STRING	INT
+#MAX_ID=60000;MAX_RECORD=60000;TableType=Hash;		
+#npcdataid	npc描述（程序不读）	AIPolicy根节点，对应NPCAIPolicy表格ID
+1	新手本-吞佛魔尊	1

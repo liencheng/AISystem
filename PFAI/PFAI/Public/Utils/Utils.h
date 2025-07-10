@@ -8,7 +8,7 @@ namespace solar
     {
         //C++静态函数，用|分割字符串，并返回int32_t数组
 
-        public:
+    public:
         static std::vector<int32_t> SplitString(std::string str)
         {
             std::vector<int32_t> result;
@@ -20,5 +20,5 @@ namespace solar
             }
             return result;
         }
-    }
-}
+    };
+};

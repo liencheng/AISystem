@@ -1,0 +1,30 @@
+﻿<Window x:Class="TableCheck.Window.DropModify"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TableCheck.Window"
+        mc:Ignorable="d"
+        Title="{DynamicResource str_recursiondrop_45}" Height="233.019" Width="415.094" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" Text="{DynamicResource str_recursiondrop_10}" VerticalAlignment="Top" Background="DarkGray" Width="95"/>
+        <ComboBox x:Name="CB_DropType" HorizontalAlignment="Left" Margin="110,9,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CB_DropType_SelectionChanged">
+            <ComboBoxItem Content="{DynamicResource str_recursiondrop_77}" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="{DynamicResource str_recursiondrop_11}" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="{DynamicResource str_recursiondrop_12}" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <TextBlock x:Name="TB_InputName" HorizontalAlignment="Left" Margin="10,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="95" Background="DarkGray"/>
+        <TextBox x:Name="TB_ItemId" HorizontalAlignment="Left" Height="23" Margin="110,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TB_ItemId_TextChanged"/>
+        <TextBlock x:Name="TB_ItemName" HorizontalAlignment="Left" Margin="235,48,0,0" TextWrapping="Wrap" Text="" Background="Chocolate"  VerticalAlignment="Top" Width="154"/>
+        <TextBlock x:Name="TB_InputRate" HorizontalAlignment="Left" Margin="10,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Background="DarkGray" Width="95"/>
+        <TextBox x:Name="TB_DropRate" HorizontalAlignment="Left" Height="23" Margin="110,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="TB_InputCount" HorizontalAlignment="Left" Margin="10,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Background="DarkGray" Width="94"/>
+        <TextBox x:Name="TB_Count" HorizontalAlignment="Left" Height="23" Margin="110,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="TB_InputPrecious" HorizontalAlignment="Left" Margin="10,149,0,0" TextWrapping="Wrap" Text="{DynamicResource str_recursiondrop_20}" VerticalAlignment="Top" Width="94" Background="DarkGray"/>
+        <ComboBox x:Name="CB_Precious" HorizontalAlignment="Left" Margin="110,143,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="{DynamicResource str_recursiondrop_21}" HorizontalAlignment="Left" Width="73"/>
+            <ComboBoxItem Content="{DynamicResource str_recursiondrop_22}" HorizontalAlignment="Left" Width="73"/>
+        </ComboBox>
+        <Button x:Name="Bt_OKModify" Content="{DynamicResource str_recursiondrop_43}" HorizontalAlignment="Left" Margin="322,173,0,0" VerticalAlignment="Top" Width="75" Click="Bt_OKModify_Click"/>
+    </Grid>
+</Window>

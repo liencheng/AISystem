@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plist>
+  <!--Inner descript ${N} =\n ${L} =< ${R} = '>' ${C} =>'&'-->
+
+  <descript>//Auto Created by Robot, Don't try to Modify</descript>
+
+  <import>
+    using System;${N}
+    using System.Collections.Generic;${N}
+    using UnityEngine;${N}
+    using System.IO;${N}
+  </import>
+
+  <namespace>namespace  ILHotfix{ </namespace>
+  <classhead>
+    public  class Table_${CodeName}${N}{
+	private const string DataName = "${CodeName}";${N} 
+    private const string TAB_BUNDLE_PATH = "{0}/ResData/zh"+"/"+"TableData/${CodeName}.data";${N}
+  </classhead>
+
+  <!--This below is Body-->
+  <single>
+    private  ${type}  m_${Variable};${N}
+    public   ${type} ${Variable} { get{ return m_${Variable};}}${N}
+  </single>
+  <repeat>
+    public 		int get${Variable}Count() { return ${COUNT}; } ${N}
+    private   ${type}[]  m_${Variable} = new ${type}[${COUNT}];${N}
+    public    ${type} Get${Variable}byIndex(int idx)
+    {${N}
+    if(idx${R}=0 ${C}${C} idx${L}${COUNT}) return m_${Variable}[idx];${N}
+    return ${defaultvalue};${N}
+    }${N}
+  </repeat>
+
+
+  <inittable>
+    private static void LoadTable(ref Dictionary${L}int, Table_${CodeName}${R} _tab, AssetBundle bundle)${N}
+    {${N}
+		if (bundle != null)${N}
+		{${N}
+			try${N}
+			{${N}
+				var assetData =  bundle.LoadAsset${L}BinaryAsset${R}(string.Format(TableManager.TableDataShortPath, DataName));${N}
+				if (assetData != null)${N}
+				{${N}    
+					if (_tab != null)${N}
+					{${N}
+						_tab.Clear();
+					}${N} 
+					BinaryDeserialize binaryDeserialize = new BinaryDeserialize(assetData.binaryBytes);${N}
+					binaryDeserialize.DeSerializeDictionary(ref _tab);${N} 
+					binaryDeserialize.Clean();${N}
+					return ;${N}
+				}${N}
+			}${N}
+			catch (Exception e)${N}
+			{${N} 
+				Debug.LogError($"Load File {DataName} Exception {e.Message}");${N}
+				return ;${N}
+			}${N} 
+		}${N} 
+		Debug.LogError($"Load File {DataName} Fail!!! No Data File!");${N} 
+    }${N}
+
+  private static Dictionary${L}int, Table_${CodeName}${R} LoadTable(ref Dictionary${L}int, Table_${CodeName}${R} _tab)${N}
+    {${N}
+		byte[] tableBytes = TableManager.GetTableBytesSync(string.Format(TableManager.TableDataShortPath, DataName));${N}
+		if (tableBytes != null)${N}
+		{${N}
+			if (_tab != null)${N}
+			{${N}
+				_tab.Clear();${N}
+			}${N} 
+			BinaryDeserialize binaryDeserialize = new BinaryDeserialize(tableBytes);${N}
+			binaryDeserialize.DeSerializeDictionary(ref _tab);${N}   
+		}${N} 
+		return _tab;${N}
+    }${N}
+
+
+    public static bool LoadTable(ref Dictionary${L}int, Table_${CodeName}${R} _tab,bool createDatFile = false)${N}
+    {${N}
+	if (createDatFile)${N}
+	{${N}
+	 if (_tab == null)${N}
+		_tab = new Dictionary${L}int, Table_${CodeName}${R}();${N}
+	 else${N}
+		_tab.Clear();${N} 
+	 if(!TableManager.ReaderPList(DataName,SerializableTable,_tab))${N}
+	 {${N}
+		Debug.LogError($"Load File {DataName} Fail!!! No Data File!");${N}
+		return false;${N}
+	 }${N} 
+	 BinarySerialize binarySerialize = new BinarySerialize();${N}
+     binarySerialize.SerializeDictionary(_tab);${N} 
+     Utils.CreateTableBinaryAsset(string.Format(TableManager.TableDataFullPath, DataName), binarySerialize.GetBytes());${N} 
+	 return true;${N}	
+	}${N}
+	
+	#if !UNITY_EDITOR${N}
+		AssetBundle bundle = null;${N}
+		var tableDataFilePath = string.Format(TAB_BUNDLE_PATH, Application.persistentDataPath);${N}
+		if (File.Exists(tableDataFilePath))${N}
+		{${N}
+			bundle = AssetBundle.LoadFromFile(tableDataFilePath);${N}
+		}${N} 
+		if (bundle != null)${N}
+		{${N}
+			LoadTable(ref _tab, bundle);${N}
+			bundle.Unload(true);${N}
+		}${N}
+		else${N}
+		{${N}
+			var packageTable = LoadTable(ref _tab);${N}
+			if (packageTable == null)${N}
+			{${N}
+				Debug.LogError($"Load AssetBundle {DataName} Fail!!! No Table Assetbundle!");${N}
+				return false;${N}
+			}${N} 
+		}${N}
+	#else${N}
+	 if (_tab == null)${N}
+		_tab = new Dictionary${L}int, Table_${CodeName}${R}();${N}
+	 else${N}
+		_tab.Clear();${N} 
+	 if(!TableManager.ReaderPList(DataName,SerializableTable,_tab))${N}
+	 {${N}
+		Debug.LogError($"Load File {DataName} Fail!!! No Data File!");${N}
+		return false;${N}
+	 }${N}  
+	#endif${N}
+	
+	return true;${N}	 
+    }${N}
+	public  static void SerializableTable(string[] valuesList,int skey,Dictionary${L}int, Table_${CodeName}${R} _hash)${N}
+    {${N}
+    if(_hash.ContainsKey(skey))${N}
+    {${N} 
+	 if(_hash.ContainsKey(skey))${N} 
+	 {${N} 
+	  Debug.LogError($"Table {DataName} Inset Key {skey} Double! ");${N} 
+	  return;${N} 
+	 }${N} 
+	}${N}
+    Table_${CodeName} _values = new Table_${CodeName}();${N}
+    ${FULLREADER}${N}${N}   
+    _hash.Add(skey,_values);${N}
+    }${N} 
+	
+	public static string  GetTableContent(ref Dictionary${L}int, Table_${CodeName}${R} _tab,byte[] assetBytes)${N}
+	{${N}
+	   if (_tab == null)${N}
+	   _tab = new Dictionary${L}int, Table_${CodeName}${R}();${N}
+	   else${N}
+	   _tab.Clear();${N}
+	   BinaryDeserialize binaryDeserialize = new BinaryDeserialize(assetBytes);${N}
+       binaryDeserialize.DeSerializeDictionary(ref _tab);${N}
+	   System.Text.StringBuilder builder = new System.Text.StringBuilder();${N} 
+	   System.Reflection.FieldInfo[] propertyInfos = null;${N} 
+	   System.Reflection.FieldInfo idProperty = null;${N} 
+	   foreach (var keyMap in _tab)${N}
+	   {${N}
+		   if (propertyInfos == null)${N}
+		   {${N}
+			   propertyInfos = keyMap.Value.GetType().GetFields(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);${N}
+			   builder.Append($"Id\t");${N}
+			   foreach (var propertyInfo in propertyInfos)${N}
+			   {${N}
+				if (propertyInfo.Name.Contains("m_"))${N}
+				{${N}
+					if (propertyInfo.Name == "m_Id")${N}
+					{${N}
+						idProperty = propertyInfo;${N}
+					}${N}
+					else${N}
+					{${N}
+						builder.Append(propertyInfo.Name.Replace("m_", "") + "\t");${N}
+					}${N}
+				}${N}  
+			   }${N} 
+			   builder.Append("\n");${N}  
+		   }${N} 
+		   if (idProperty != null)${N}
+		   {${N}
+			   builder.Append(idProperty.GetValue(keyMap.Value)+"\t");${N} 
+		   }${N} 
+		   foreach (var propertyInfo in propertyInfos)${N}
+		   {${N}
+		    if (propertyInfo.Name == idProperty.Name) continue;${N}
+            if(propertyInfo.Name.Contains("m_"))${N}
+            {${N}
+                string pt = propertyInfo.FieldType.Name; ${N}
+                if (pt.Contains("[]"))${N}
+                {${N}
+                    object vars = propertyInfo.GetValue(keyMap.Value); ${N}
+                    if (vars != null)${N}
+                    {${N}
+                        if(vars is Int32[])${N}
+                        {${N}
+                            int[] tmpVars = (Int32[])vars;${N}
+                            builder.Append(string.Join(",", tmpVars) +"\t");${N}
+                        }${N}
+                        if (vars is byte[])${N}
+                        {${N}
+                            byte[] tmpVars = (byte[])vars;${N}
+                            builder.Append(string.Join(",", tmpVars) + "\t");${N}
+                        }${N}
+                        if (vars is short[])${N}
+                        {${N}
+                            short[] tmpVars = (short[])vars;${N}
+                            builder.Append(string.Join(",", tmpVars) + "\t");${N}
+                        }${N}
+                        if (vars is Single[])${N}
+                        {${N}
+                            Single[] tmpVars = (Single[])vars;${N}
+                            builder.Append(string.Join(",", tmpVars) + "\t");${N}
+                        }${N}
+                        if (vars is Double[])${N}
+                        {${N}
+                            Double[] tmpVars = (Double[])vars;${N}
+                            builder.Append(string.Join(",", tmpVars) + "\t");${N}
+                        }${N}
+                        if (vars is Int64[])${N}
+                        {${N}
+                            Int64[] tmpVars = (Int64[])vars;${N}
+                            builder.Append(string.Join(",", tmpVars) + "\t");${N}
+                        }${N}
+                        if (vars is string[])${N}
+                        {${N}
+                            string[] tmpVars = (string[])vars;${N}
+                            builder.Append(string.Join(",", tmpVars) + "\t");${N}
+                        }${N}
+                        builder.Append("\t");${N}
+                    }${N} 
+                }${N}
+                else${N}
+                {${N}
+                    builder.Append(propertyInfo.GetValue(keyMap.Value) + "\t");${N}
+                }${N}
+            }${N} 
+		   }${N}
+		   builder.Append("\n");${N}  		   
+	  }${N} 
+		return builder.ToString();${N} 
+	}${N} 
+  </inittable>
+
+  <tail>${N}}${N}}${N}</tail>
+</plist>

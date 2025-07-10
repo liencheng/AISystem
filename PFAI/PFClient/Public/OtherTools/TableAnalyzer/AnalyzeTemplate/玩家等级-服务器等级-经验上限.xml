@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalyzeInfo SQLName="PlayerLvServerLvExpMax">
+  <Params>
+	  <Param Id="ServerOpenDate" Type="System.String" Default="2019-07-09"/>
+	  <Param Id="NowDate" Type="System.String" Default="2019-07-09"/>
+  </Params>
+  <Require Name="LevelUp"/>
+  <Require Name="ServerLevel"/>
+  <Require Name="ServerOpenDay"/>
+  <Require Name="ServerOpenDay2"/>
+</AnalyzeInfo>

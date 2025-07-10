@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+from tasks.actions import net_packets
+from tasks.actions import Functions
+
+
+class ActionCG_MERCENARY_REQ:
+    def __init__(self, person):
+        self.person = person
+
+    def run(self):
+        packet = net_packets.PACKETS.CG_MERCENARY_REQ(self.person)
+        # params begin ( don't move this line )
+
+        packet['activityId'] = self.person['activityId']
+        # params end ( don't move this line)
+        res = Functions.send_packet(packet)
+        # Functions.wait_for_packet(self.person, "CG_MERCENARY_REQ")
+        return res

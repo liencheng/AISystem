@@ -4,6 +4,7 @@
 #include "../../Obj/Obj_Char.h"
 #include "../AIGoalSensor/IGoal.h"
 #include "../AISignal/AISignal.h"
+#include "./../AIGoalSensor/IGoal.h"	
 /*
  *AIKnowledge, AI知识库
  *Goals: 不直接与AI行为交互, 只提供数据
@@ -12,13 +13,13 @@
  *pPlayer: 玩家指针，用于获取玩家的信息
  */
 
+class Obj_Char; // Forward declaration of Obj_Char class
+
 class AIKnowledge
 {
 public:
-   AIKnowledge(Obj_Char *pChar):m_pOwner(pChar) {
-      InitGoals();
-      m_pScene = m_pOwner->GetScene();
-   };
+	AIKnowledge() = default; // Default constructor
+	AIKnowledge(Obj_Char* pChar);
    ~AIKnowledge(){}
    void InitGoals();
 
@@ -43,7 +44,7 @@ public:
 
  void MarkDirty() { m_bDirty = true;}
  void ClearDirty() { m_bDirty = false;}
- bool IsDirty() {return m_bDirty;}
+ bool IsDirty() const { return m_bDirty; }
  
 private:
  void UpdateGoals();

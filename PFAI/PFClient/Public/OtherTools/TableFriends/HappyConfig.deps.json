@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "HappyConfig/1.0.0": {
+        "dependencies": {
+          "Microsoft.Office.Excel": "14.0.4760.1000"
+        },
+        "runtime": {
+          "HappyConfig.dll": {}
+        }
+      },
+      "Microsoft.Office.Excel/14.0.4760.1000": {
+        "runtime": {
+          "lib/net20/Office.dll": {
+            "assemblyVersion": "14.0.0.0",
+            "fileVersion": "14.0.4760.1000"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HappyConfig/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Office.Excel/14.0.4760.1000": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A6pxGABJUyirV9w9uqMQfkZFTREIltkqAI+KWG8e5JOZI6kjUTUz+861Yh0mrEW/ZrVzuwBhXdKd4V7rsfC9fg==",
+      "path": "microsoft.office.excel/14.0.4760.1000",
+      "hashPath": "microsoft.office.excel.14.0.4760.1000.nupkg.sha512"
+    }
+  }
+}

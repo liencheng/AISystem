@@ -1,5 +1,8 @@
+#pragma once
 #include <cstdint>
 #include <ctime>
+#include "Public.h"
+#include "Utils/Time.h"
 /*
 todo:
 	Signal的设计目的：用于通知AI行为，如：打断，切换状态等
@@ -25,10 +28,16 @@ enum class E_AISignalType
 class AISignal
 {
 public:
-    AISignal();
-    ~AISignal();
+    AISignal() {};
+    ~AISignal() {};
 
-    bool    isExpired() const;
+    bool    isExpired() const {
+		if (m_ExpiredTime <= 0) return false; // 如果过期时间小于等于0，则不考虑过期
+		if (m_ExpiredTime < TimeHelper::getCurrentTimestamp()) {
+			return true; // 如果当前时间大于过期时间，则表示已过期
+		}
+		return false; // 否则表示未过期
+    };
     int32_t GetWeight() const{ return m_Weight; }
     E_AISignalType GetSignalType() const { return m_type; }
     int32_t GetSenderObjId() const { return m_SenderObjId; }
@@ -40,9 +49,9 @@ public:
     void SetSignalType(E_AISignalType type) { m_type = type; }
 
 private:
-    int32_t         m_SenderObjId;
-    time_t          m_ExpiredTime; 
+    int32_t         m_SenderObjId = -1;
+    time_t          m_ExpiredTime = 0; 
     //signal 的权重大小从 100000 开始，用于区分优先级，数值越大越优先处理
-    int32_t         m_Weight;
-    E_AISignalType    m_type;
+    int32_t         m_Weight = 0;
+    E_AISignalType    m_type = E_AISignalType::SIGNAL_TYPE_UNKNOWN;
 };

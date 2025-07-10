@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalyzeInfo SQLName="recursiondropresult">
+  <Params>
+    <Param Id="Id" Type="System.Int32" Default="0"/>
+  </Params>
+  <Require Name="RecursionDrop"/>
+  <Require Name="CommonItem"/>
+</AnalyzeInfo>

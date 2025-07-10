@@ -1,3 +1,4 @@
+#pragma once
 #include "Public.h"
 #include "../Scene/Obj/Obj_Char.h"
 #include "../Scene/Obj/Obj_NPC.h"

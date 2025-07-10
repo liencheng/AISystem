@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "../../Public/DataDefine.h"
-#include "../AI/AIPolicy/IAIPolicy.h"
+class IAIPolicy; // Forward declaration of IAIPolicy class
 
 class Obj_Char
 {
@@ -30,5 +30,5 @@ public:
     int64_t GetMP()const{ return  0;}
     bool IsInCombat()const {return  false;}
     Scene * GetScene()const{ return  pScene;}
-    int64_t GetDataID() const { return 0; } // TODO: 实现获取角色DataID的逻辑
+    int64_t GetDataID() const { return 1; } // TODO: 实现获取角色DataID的逻辑
 };

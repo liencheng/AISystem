@@ -6,10 +6,10 @@
 
 void IAIPolicy::Update(float fDeltaTime)
 {
-    if(IsBehaviorDirty() == true || m_pAIKnowledge.IsDirty())
+    if(IsBehaviorDirty() == true || m_AIKnowledge.IsDirty())
     {
         ClearBehaviorDirty();
-        m_pAIKnowledge.ClearDirty();
+        m_AIKnowledge.ClearDirty();
 
         UpdateView();
         UpdateDbg();
@@ -62,12 +62,12 @@ void IAIPolicy::InitBehaviorFromCfg()
 
 void IAIPolicy::UpdateView()
 {
-   static_assert(false, "need update view");
+   //static_assert(false, "need update view");
 }
 
 void IAIPolicy::UpdateDbg()
 {
-    static_assert(false, "need update dbg");
+    //static_assert(false, "need update dbg");
     //需要
 }
 

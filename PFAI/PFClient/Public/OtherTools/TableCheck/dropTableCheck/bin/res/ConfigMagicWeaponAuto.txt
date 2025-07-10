@@ -1,0 +1,4 @@
+Id		PublicTables/TalismanCollectAttr.txt	PublicTables/MountBase.txt	PublicTables/HomeDecoration.txt	PublicTables/HomeDecoration.txt	PublicTables/HomeDecoration.txt	PublicTables/HomeFurnitueMake.txt	ServerTables/HomeBlessRand.txt
+对应列		IsNeedToHide	IsShowInUI	ShowIndex	IsShowInDreamland	DreamlandCount	IsHide	Weight
+法宝ID	备注	法宝列表显隐	坐骑列表显示索引	摆件列表显示索引	摆件梦境显隐	摆件梦境数量	摆件制作显隐	祈愿权重
+37038	照玉寒	1	244	2036	1	2	1	5

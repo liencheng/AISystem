@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalyzeInfo SQLName="EquipChangeProfessionCheck">
+  <Params>
+  </Params>
+  <Require Name="EquipAttr"/>
+  <Require Name="CommonItem"/>
+</AnalyzeInfo>

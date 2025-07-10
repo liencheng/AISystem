@@ -27,12 +27,3 @@ enum class E_AIBehaviorStatus
 };
 
 
-enum class E_AIGoalType
-{
-    G_None = 0,
-    G_MoveTo,
-    G_Chat,
-    G_Attack,
-    G_Follow,
-};
-

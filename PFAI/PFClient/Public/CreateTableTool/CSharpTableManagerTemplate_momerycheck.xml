@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plist>
+  <!--Inner descript ${N} =\n ${L} =< ${R} = '>'-->
+  
+  <descript>//Auto Created by Robot, Don't try to Modify</descript>
+  
+  <import>
+    using System;${N}
+    using System.Collections.Generic;${N}
+    using System.Collections;${N}
+     using UnityEngine;${N}
+     using System.IO;${N}
+  </import>
+  
+  <namespace>namespace  Games.Table{ </namespace>
+  <classhead>
+
+    public  delegate void SerializableTable${L}T${R}(string[] valuesList, int skey, Dictionary${L}int, T${R} _hash);${N}
+    //[Serializable]${N}
+    public class TableManager${N}
+    {${N}
+    static public Dictionary${L}string, string${R} checkre = new Dictionary${L}string, string${R}();${N}
+    long m_MonoHeapSizePre = 0;${N}
+    long m_MonoUsedSizePre = 0;${N}
+    long m_MonoHeapSizePost = 0;${N}
+    long m_MonoUsedSizePost = 0;${N}
+    private static string[] MySplit(string str, string[] nTypeList, string regix)${N}
+    {${N}
+    if (string.IsNullOrEmpty(str))${N}
+    {${N}
+    return null;${N}
+    }${N}
+    String[] content = new String[nTypeList.Length];${N}
+    int nIndex = 0;${N}
+    int nstartPos = 0;${N}
+    while (nstartPos &lt;= str.Length)${N}
+         {${N}
+             int nsPos = str.IndexOf(regix, nstartPos);${N}
+             if (nsPos &lt; 0)${N}
+             {${N}
+                 String lastdataString = str.Substring(nstartPos);${N}
+                 if (string.IsNullOrEmpty(lastdataString) &amp;&amp; nTypeList[nIndex].ToLower() != "string")${N}
+                 {${N}
+                     content[nIndex++] = "--";${N}
+                 }${N}
+                 else${N}
+                 {${N}
+                     content[nIndex++] = lastdataString;${N}
+                 }${N}
+                 break;${N}
+             }${N}
+             else${N}
+             {${N}
+                 if (nstartPos == nsPos)${N}
+                 {${N}
+                     if (nTypeList[nIndex].ToLower() != "string")${N}
+                     {${N}
+                         content[nIndex++] = "--";${N}
+                     }${N}
+                     else${N}
+                     {${N}
+                         content[nIndex++] = "";${N}
+                     }${N}
+                 }${N}
+                 else${N}
+                 {${N}
+                     content[nIndex++] = str.Substring(nstartPos, nsPos - nstartPos);${N}
+                 }${N}
+                 nstartPos = nsPos + 1;${N}
+             }${N}
+         }${N}
+         return content;${N}
+     }${N} 
+private static string GetWinPathTail()${N}
+{${N}
+#if UNITY_STANDALONE_WIN${N}
+#if UNITY_EDITOR${N}
+            return "/Editor";${N}
+#elif PCBUILD${N}
+        return "";${N}
+#elif PCTYBUILD${N}
+        return "/TY";${N}
+#elif PCTESTBUILD${N}
+        return "/Test";${N}
+#endif${N}
+#endif${N}
+return "";${N}
+} ${N}
+ static List${L}string${R} alldataRow = new List${L}string${R}();${N}
+ public static bool ReaderPList${L}T${R}(String xmlFile, SerializableTable${L}T${R} _fun, Dictionary${L}int, T${R} _hash)${N}
+ {${N}
+ #region LoadTable ${N}
+ string[] list= xmlFile.Split('.'); ${N}
+ string relTablePath = list[0].Substring(6);${N}
+			alldataRow.Clear();${N}
+            int readIndex = 0;${N}
+			string subName = string.Empty;${N}
+			string tableFilePath = string.Empty;${N}
+			string tempLine = string.Empty;${N}
+            while (true)${N}
+            {${N}
+                if (readIndex > 0)${N}
+                {${N}
+                    subName = string.Format("-{0}", readIndex);${N}
+                }${N}${N}
+                tableFilePath = string.Format("{0}/ResData{1}/Table/{2}{3}.txt", Application.persistentDataPath, GetWinPathTail(), relTablePath, subName);${N}
+                if (File.Exists(tableFilePath))${N}
+                {${N}
+                    Stream ss;${N}
+                    if (relTablePath.ToLower() == "strfilter")${N}
+                    {${N}
+                        FileStream fs = File.Open(tableFilePath, FileMode.Open);${N}
+                        //ss = new System.IO.Compression.GZipStream(fs, System.IO.Compression.CompressionMode.Decompress);${N}
+                         ss = new MemoryStream((int)fs.Length);${N}
+                         byte[] buffer = new byte[32768];${N}
+                         int read;${N}
+                         while ((read = fs.Read(buffer, 0, buffer.Length)) > 0)${N}
+                         {${N}
+                             for (int tmpi = 0; read > tmpi; ++tmpi)${N}
+                             {${N}
+                                buffer[tmpi] = (byte)(buffer[tmpi] ^ 0x11);${N}
+                             }${N}
+                            ss.Write(buffer, 0, read);${N}
+                         }${N}
+                        ss.Flush();${N}
+                        ss.Position = 0;${N}
+                    }${N}
+                    else${N}
+                    {${N}
+                        ss = File.Open(tableFilePath, FileMode.Open);${N}
+                    }${N}
+					using (StreamReader sr = new StreamReader(ss))${N}
+					{${N}
+						tempLine = sr.ReadLine();${N}
+						while (tempLine != null)${N}
+						{${N}
+							alldataRow.Add(tempLine);${N}
+							tempLine = sr.ReadLine();${N}
+						}${N}
+						sr.Dispose();${N}
+						sr.Close();${N}
+					}${N}
+					ss.Dispose();${N}
+                    ss.Close();${N}
+                }${N}
+                else${N}
+                {${N}
+					 tableFilePath = string.Format("Bundle/Table/{0}{1}", relTablePath, subName);${N}
+					 TextAsset testAsset = Resources.Load(tableFilePath, typeof(TextAsset)) as TextAsset;${N}
+					 if (null != testAsset)${N}
+					 {${N}
+						 using (StringReader sr = new StringReader(testAsset.text))${N}
+						 {${N}
+							 tempLine = sr.ReadLine();${N}
+							 while (tempLine != null)${N}
+							 {${N}
+								 alldataRow.Add(tempLine);${N}
+								 tempLine = sr.ReadLine();${N}
+							 }${N}
+							 sr.Dispose();${N}
+							 sr.Close();${N}
+						 }${N}
+						 Resources.UnloadAsset(testAsset);${N}
+					 }${N}
+					 else${N}
+					 {${N}
+						 break;${N}
+					 }${N}
+                }${N}
+                readIndex++;${N}
+            }${N}
+			#endregion${N}${N}
+			
+		   #region InitTable${N}
+           int skip = 0;${N}
+           string[] typeList = null;${N}
+           string[] bIgnore = null;${N}
+		   int ignoreCount = 0;${N}
+		   string[] strCol = null;${N}
+           string[] valuesList = null;${N}
+           int nKey = -1;${N}
+           int lastKey = int.MinValue;${N}${N}
+		   
+         for (int idx = 0; idx ${L} alldataRow.Count; ++idx)${N}
+         {${N}
+             tempLine = alldataRow[idx].TrimEnd('\r');${N}
+             if (skip == 1)${N}
+             {${N}
+                 typeList = tempLine.Split('\t');${N}
+                 ++skip;${N}
+                 continue;${N}
+             }${N}
+             else if (skip == 2)${N}
+             {${N}
+                 bIgnore = tempLine.Split('\t');${N}
+                 for (int idy = 0; idy ${L} bIgnore.Length; ++idy)${N}
+                 {${N}
+                     if (bIgnore[idy] == "N") ++ignoreCount;${N}
+                 }${N}
+             }${N}
+             if (++skip ${L} 4) continue;${N}
+             if (String.IsNullOrEmpty(tempLine)) continue;${N}
+             if (tempLine[0] == '#') continue;${N}${N}
+
+             strCol = tempLine.Split('\t');${N}
+             if (strCol.Length == 0)${N}
+             {${N}
+                 Debug.LogError(string.Format("Table: {0} Line: {1} IsNullOrEmpty, Please check again!!!", relTablePath, idx));${N}
+                 continue;${N}
+             }${N}${N}
+
+             if (!Int32.TryParse(strCol[0], out nKey))${N}
+             {${N}
+                 nKey = lastKey;${N}
+             }${N}${N}
+
+			 if (valuesList == null)${N}
+			 {${N}
+	             valuesList = new string[strCol.Length - ignoreCount];${N}
+			 }${N}
+             int nIndex = 0;${N}
+             for (int idy = 0; idy ${L} strCol.Length; ++idy)${N}
+             {${N}
+                 if (idy ${L} bIgnore.Length &amp;&amp; !String.IsNullOrEmpty(bIgnore[idy]) &amp;&amp; bIgnore[idy] == "N") continue;${N}
+                 if (string.IsNullOrEmpty(strCol[idy]) &amp;&amp;${N}
+                     "STRING" != typeList[idy].ToUpper())${N}
+                 {${N}
+                     valuesList[nIndex++] = idy == 0 ? nKey.ToString() : "0";${N}
+                 }${N}
+                 else${N}
+                 {${N}
+                     valuesList[nIndex++] = strCol[idy];${N}
+                 }${N}
+             }${N}
+             _fun(valuesList, nKey, _hash);${N}
+             lastKey = nKey;${N}
+         }${N}
+         #endregion${N}
+		 alldataRow.Clear();${N}
+ return true;${N}
+ }${N}
+    public static int ConvertToInt32(string value)${N}
+    {${N}
+        if (value.Length ${R}= 1)${N}
+        {${N}
+            if (value[0] == '*')${N}
+            {${N}
+                string temp_string = value.Substring(1);${N}
+                return Convert.ToInt32(temp_string);${N}
+            }${N}
+        }${N}
+        return Convert.ToInt32(value);${N}
+    }${N}
+    public static long ConvertToInt64(string value)${N}
+    {${N}
+        if (value.Length ${R}= 1)${N}
+        {${N}
+            if (value[0] == '*')${N}
+            {${N}
+                string temp_string = value.Substring(1);${N}
+                return Convert.ToInt64(temp_string);${N}
+            }${N}
+        }${N}
+        return Convert.ToInt64(value);${N}
+    }${N}
+    public static float ConvertToSingle(string value)${N}
+    {${N}
+        if (value.Length ${R}= 1)${N}
+        {${N}
+            if (value[0] == '*')${N}
+            {${N}
+                string temp_string = value.Substring(1);${N}
+                return Convert.ToSingle(temp_string);${N}
+            }${N}
+        }${N}
+        return Convert.ToSingle(value);${N}
+    }${N}
+  </classhead>
+
+  <!--This below is Body-->
+  <managerdata>
+    private static Dictionary${L}int, Tab_${CodeName}${R} g_${CodeName} = null;
+    ${N} public static bool InitTable_${CodeName}(bool bLoadTable = true)${N}
+    {${N}
+    if(bLoadTable == false)${N}
+    {${N}
+    g_${CodeName}=null;${N}
+    return false;${N}
+    }${N}
+    if(g_${CodeName}==null)${N}
+    {${N}
+    g_${CodeName} = new Dictionary${L}int, Tab_${CodeName}${R}();${N}
+    }${N}
+    g_${CodeName}.Clear();${N}
+    if (!Tab_${CodeName}.LoadTable(g_${CodeName})) return false;${N}
+    return true;${N}
+    }
+  </managerdata>
+
+  <initsingle>
+    m_MonoUsedSizePre = UnityEngine.Profiling.Profiler.GetMonoUsedSizeLong();${N}
+    bRet ${C}= InitTable_${CodeName}(bLoadTable);${N}
+    if (!checkre.ContainsKey("${CodeName}"))${N}
+    {${N}
+    checkre.Add("${CodeName}", "" + m_MonoUsedSizePre);${N}
+    }${N}
+  </initsingle>
+  
+  <inittable>  
+    public  bool InitTable(bool bLoadTable = true)${N}
+    {${N}
+	bool bRet=true;${N}
+    ${FULLINIT}${N}
+	return bRet;${N}
+    }${N}
+  </inittable>
+
+  <manageropt>  
+	 public static Tab_${CodeName}  Get${CodeName}ByID(int nKey, int nIndex = 0)${N}
+    {${N}
+	if(g_${CodeName}==null)${N}
+	{${N}
+		InitTable_${CodeName}();${N}
+	}${N}
+    if( g_${CodeName}.ContainsKey(nKey))${N}
+    {${N}
+      return g_${CodeName}[nKey];${N}
+    }${N}
+    return null;${N}
+    }${N}
+
+
+	public static Dictionary${L}int, Tab_${CodeName}${R}  Get${CodeName}()${N}
+	{${N}
+	if(g_${CodeName}==null)${N}
+	{${N}
+		InitTable_${CodeName}();${N}
+	}${N}
+	return g_${CodeName};${N}
+	}${N}
+  </manageropt>
+
+  <tail>${N}}${N}}${N}</tail>
+  </plist>
+  

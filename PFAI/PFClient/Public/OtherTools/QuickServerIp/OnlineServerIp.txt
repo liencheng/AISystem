@@ -1,0 +1,55 @@
+10.133.42.253	manager2
+10.133.42.245	logserver pangui
+10.133.42.244	v_iweb-zszz244	iweb
+# gametestserver
+10.133.42.9	 v_zhushentest9
+10.133.42.111	wmjd-gmservertest
+10.133.42.110	gametest1
+10.133.42.44	gametest2
+10.133.42.45	gametest3
+10.133.42.46	gametest4
+# gameserver
+10.133.42.47	wmjd-gmserver redis-server
+10.133.42.11	game1
+10.133.42.12	game2
+10.133.42.13	game3
+10.133.42.14	game4
+10.133.42.15	game5
+10.133.42.16	game6
+10.133.42.17	game7
+10.133.42.18	game8
+10.133.42.19	game9
+10.133.42.20	game10
+10.133.42.21	game11
+10.133.42.22	game12
+10.133.42.23	game13
+10.133.42.24	game14
+10.133.42.25	game15
+10.133.42.26	game16
+10.133.42.27	game17
+10.133.42.28	game18
+10.133.42.29	game19
+10.133.42.30	game20
+10.133.42.31	game21
+10.133.42.32	game22
+10.133.42.33	game23
+10.133.42.34	game24
+10.133.42.35	game25
+10.133.42.36	game26
+10.133.42.37	game27
+10.133.42.38	game28
+10.133.42.39	game29
+10.133.42.40	game30
+10.133.42.41	game31
+10.133.42.42	game32
+10.133.42.43	game33
+# slave
+10.133.42.101	backup1	 redis-udbm
+10.133.42.102	backup2
+10.133.42.103	backup3
+10.133.42.104	backup4
+10.133.42.105	backup5
+10.133.42.106	backup6
+10.133.42.107	backup7
+10.133.42.108	backup8
+10.133.42.109	backup9	 redis-slave

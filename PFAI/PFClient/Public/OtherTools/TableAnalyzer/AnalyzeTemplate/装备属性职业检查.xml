@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnalyzeInfo SQLName="EquipAttrProfessionCheck">
+  <Params>
+  </Params>
+  <Require Name="EquipAttr"/>
+  <Require Name="CommonItem"/>
+  <Require Name="PlayerCombatValue"/>
+  <Require Name="Preset_ProfessionConfig"/>
+</AnalyzeInfo>

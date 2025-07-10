@@ -1,0 +1,11 @@
+Id	Desc	SceneId
+INT	STRING	INT
+#MAX_ID=4690;MAX_RECORD=15;TableType=Hash;		
+#SceneId，与SceneClassId一致	程序不读	#SceneId，与SceneClassId一致
+4	小池镇有行为NPC刷新	4
+5	河阳城有行为NPC刷新	5
+6	青云山有行为NPC刷新	6
+324	庙会有行为NPC刷新	324
+402	有狐丘有行为NPC刷新	402
+403	青你训练营有行为NPC刷新	403
+373	霜渊	373

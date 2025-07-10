@@ -1,7 +1,7 @@
 #include "Public.h"
 #include "Obj_Char.h"
 #include "../AI/AIPolicy/AIBossPolicy.h"
-
+#include "../AI/AIPolicy/IAIPolicy.h"
 
 Obj_Char::Obj_Char()
 {

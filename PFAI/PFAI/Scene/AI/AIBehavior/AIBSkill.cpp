@@ -28,6 +28,7 @@ void AIBSkill::OnUpdate()
 
 void AIBSkill::OnEnd(E_AIBehaviorStatus result)
 {
+    IBehavior::OnEnd(result);
     SetBehaviorStatus(result);
 	LOG_INFO("AIBSkill::OnEnd, SkillId:{}, Result:{}", m_nSkillId, static_cast<int>(result));
 }

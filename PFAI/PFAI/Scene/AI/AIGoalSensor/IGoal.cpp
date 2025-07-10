@@ -3,6 +3,8 @@
 #include "Public.h"
 #include "Utils/Utils.h"
 #include "../AICondition/AIConFactory.h"
+#include "../AIKnowledge/AIKnowledge.h"
+#include "Utils/GenId.h"
 
 IGoal::IGoal(int32_t nCfgId)
 {
@@ -21,8 +23,9 @@ void IGoal::Init(int32_t nCfgId)
 	}
 	m_Id = gGenGoalId.generate(); // Generate a unique ID for the goal
 	m_EGaolType = static_cast<E_AIGoalType>(pGoalCfg->GetType());
-	m_Weight = pGoalCfg->GetPrority();
-	m_LastCalGoalTime = TimeHelper::getCurrentTimestamp();
+	m_CfgWeight = pGoalCfg->GetPrority();
+	m_CfgCalGoalInterval = pGoalCfg->GetCalGoalInterval();
+	m_CfgGoalTimeOut = pGoalCfg->GetGoalTimeOut();
 	//初始化条件
 	std::string conditionList = pGoalCfg->GetConditionList();
 	if (!conditionList.empty())
@@ -83,9 +86,26 @@ void IGoal::OnSatisfy()
 {
     //满足条件，则更新状态
     m_bSatisfy = true;
-    m_OverdueTime = TimeHelper::getCurrentTimestamp() + m_GoalTimeOut;
+    m_OverdueTime = TimeHelper::getCurrentTimestamp() + m_CfgGoalTimeOut;
 }
 
+void IGoal::Reset()
+{
+	//重置状态
+	m_bSatisfy = false;
+	m_OverdueTime = 0;
+}
+
+bool IGoal::IsTimeOut() const
+{
+	return m_OverdueTime > 0 && (TimeHelper::getCurrentTimestamp() > m_OverdueTime);
+}
+
+bool IGoal::InCalGoalCD() const
+{
+	return (m_LastCalGoalTime > 0) &&
+		(TimeHelper::getCurrentTimestamp() - m_LastCalGoalTime < m_CfgCalGoalInterval);
+}
 
 bool IGoal::IsSatisfyCon(const AIKnowledge* pK) const
 {

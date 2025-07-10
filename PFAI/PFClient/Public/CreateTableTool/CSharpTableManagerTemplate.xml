@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plist>
+  <!--Inner descript ${N} =\n ${L} =< ${R} = '>'-->
+  
+  <descript>//Auto Created by Robot, Don't try to Modify</descript>
+  
+  <import> 
+    using System;${N}
+    using System.Collections.Generic;${N}
+    using System.Collections;${N}
+    using UnityEngine;${N}
+    using System.IO;${N}
+  </import>
+  
+  <namespace>namespace  Games.Table{ </namespace>
+  <classhead> 
+  public partial class TableManager {${N}
+  public const int NullRowIndex = int.MinValue;${N} 
+  public static bool m_LoadClientBlockData = false;${N}
+  </classhead>
+
+  <!--This below is Body-->
+  <managerdata>
+    private static Dictionary${L}int, Tab_${CodeName}${R} g_${CodeName} = null;${N}
+    ${N} public static void InitTable_${CodeName}(bool bLoadTable = true, bool createDatFile = false, byte[] bytes = null)${N}
+    {${N}
+    if(bLoadTable == false)${N}
+    {${N}
+    g_${CodeName} = null;${N}
+	Tab_${CodeName}.Clean();${N}
+    return ;${N}
+    }${N}
+     Tab_${CodeName}.LoadTable(ref g_${CodeName},createDatFile,bytes);${N}
+    }
+  </managerdata>
+
+  <initsingle>
+    InitTable_${CodeName}(bLoadTable,createDatFile);${N}
+  </initsingle>
+  
+  <inittable>
+    public static void InitTable(bool bLoadTable = true, bool createDatFile = false)${N}
+    {${N}
+	DAO.ILRuntimeManager.Instance.InitTable(bLoadTable,createDatFile);${N}
+    ${FULLINIT}${N}
+    #if UNITY_EDITOR${N}
+    if (createDatFile)${N}
+    {${N}
+    UnityEditor.AssetDatabase.SaveAssets();${N}
+    }${N}
+    #endif${N}
+    }${N}
+  </inittable>
+
+  <manageropt>
+	public static Tab_${CodeName}  Get${CodeName}ByID(int nKey, int nIndex = 0)${N}
+    {${N}
+    if(g_${CodeName}==null)${N}
+    {${N}
+    InitTable_${CodeName}();${N}
+    }${N}
+    if( g_${CodeName}.ContainsKey(nKey))${N}
+    {${N}
+    return g_${CodeName}[nKey];${N}
+    }${N}
+    return Tab_${CodeName}.NullData;${N}
+    }${N}
+
+	public static Dictionary${L}int, Tab_${CodeName}${R}  Get${CodeName}()${N}
+    {${N}
+    if(g_${CodeName}==null)${N}
+    {${N}
+    InitTable_${CodeName}();${N}
+    }${N}
+    return g_${CodeName};${N}
+    }${N}
+  </manageropt>
+
+  <tail>${N}}${N}}${N}</tail>
+  </plist>
+  
