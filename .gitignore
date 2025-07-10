@@ -17,3 +17,6 @@
 /.vs
 /PFAI/.vs/PFAI/v17/ipch/AutoPCH/5b0114cf9a54d847/TABLE_NPCAIBEHAVIOR.ipch
 /PFAI/PFAI/x64/Debug
+/PFAI/x64/Debug
+/PFAI/debug.log
+*.pdb
